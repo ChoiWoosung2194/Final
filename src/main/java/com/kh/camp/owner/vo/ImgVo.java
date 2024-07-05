@@ -10,5 +10,5 @@ public class ImgVo {
 
     private String no;
     private String campsiteNo;
-    private List<MultipartFile> filePathList;
+    private String filePathList;
 }

@@ -1,12 +1,12 @@
-package com.chemi.admin.controller;
+package com.kh.camp.admin.controller;
 
-import com.chemi.admin.service.AdminService;
-import com.chemi.admin.vo.AdminVo;
-import com.chemi.admin.vo.CombinedResponse;
-import com.chemi.admin.vo.PrdImgVo;
-import com.chemi.admin.vo.ProductVo;
-import com.chemi.member.vo.MemberVo;
+
 import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.admin.service.AdminService;
+import com.kh.camp.admin.vo.AdminVo;
+import com.kh.camp.admin.vo.CombinedResponse;
+import com.kh.camp.admin.vo.PrdImgVo;
+import com.kh.camp.admin.vo.ProductVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

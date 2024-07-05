@@ -22,7 +22,7 @@ public class CampUserDao {
         return mapper.getCampingDetail(campNo);
     }
 
-    public List<CampImgVo> getCampImgList(String campNo) {
+    public List<com.chemi.owner.vo.ImgVo> getCampImgList(String campNo) {
         return mapper.getCampImgList(campNo);
     }
 

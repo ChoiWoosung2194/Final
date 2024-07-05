@@ -1,12 +1,10 @@
-package com.chemi.admin.mapper;
+package com.kh.camp.admin.mapper;
 
-import com.chemi.admin.vo.AdminVo;
-import com.chemi.admin.vo.PrdImgVo;
-import com.chemi.admin.vo.ProductVo;
-import com.chemi.member.vo.MemberVo;
 import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.admin.vo.AdminVo;
+import com.kh.camp.admin.vo.PrdImgVo;
+import com.kh.camp.admin.vo.ProductVo;
 import org.apache.ibatis.annotations.*;
-import org.springframework.ui.Model;
 
 import java.util.List;
 

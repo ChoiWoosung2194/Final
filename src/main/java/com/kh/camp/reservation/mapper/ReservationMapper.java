@@ -1,8 +1,10 @@
-package com.chemi.reservation.mapper;
+package com.kh.camp.reservation.mapper;
 
 
-import com.chemi.reservation.vo.ReservationVo;
-import org.apache.ibatis.annotations.*;
+import com.kh.camp.reservation.vo.ReservationVo;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
