@@ -1,8 +1,8 @@
-package com.chemi.reservation.dao;
+package com.kh.camp.reservation.dao;
 
 
-import com.chemi.reservation.mapper.CampzoneMapper;
-import com.chemi.reservation.vo.CampzoneVo;
+import com.kh.camp.reservation.mapper.CampzoneMapper;
+import com.kh.camp.reservation.vo.CampzoneVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

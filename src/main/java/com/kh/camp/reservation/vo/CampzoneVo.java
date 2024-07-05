@@ -1,4 +1,4 @@
-package com.chemi.reservation.vo;
+package com.kh.camp.reservation.vo;
 
 import lombok.Data;
 

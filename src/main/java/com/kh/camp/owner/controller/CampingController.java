@@ -1,9 +1,10 @@
-package com.chemi.owner.controller;
+package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.CampingService;
+
 import com.chemi.owner.vo.CampingVo;
 import com.chemi.owner.vo.ImgVo;
 import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.owner.service.CampingService;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

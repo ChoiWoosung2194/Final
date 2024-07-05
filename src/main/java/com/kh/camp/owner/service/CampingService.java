@@ -1,16 +1,11 @@
-package com.chemi.owner.service;
+package com.kh.camp.owner.service;
 
-import com.chemi.owner.dao.CampingDao;
 import com.chemi.owner.vo.CampingVo;
 import com.chemi.owner.vo.ImgVo;
-import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.dao.CampingDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -36,27 +31,28 @@ public class CampingService {
         return dao.updateFacility(no, name);
     }
 
-    public int insertCampImg(String campName, ImgVo vo) {
-        List<MultipartFile> filePathList = vo.getFilePathList();
+    public int insertCampImg(String campName, ImgVo vo ) {
+
 
         CampingVo campingVo = dao.campByName(campName);
         String campNo = campingVo.getNo();
         vo.setCampsiteNo(campNo);
 
-        int sum = 0;
-        for (MultipartFile att : filePathList) {
-            String originName = att.getOriginalFilename();
-            String targetPath = "D:\\chemi\\src\\main\\webapp\\resources\\images\\" + originName;
-            File targetFile = new File(targetPath);
-            vo.setFilePathList(targetPath);
+//        int sum = 0;
+//        for (MultipartFile att : filePathList) {
+//            String originName = att.getOriginalFilename();
+//            String targetPath = "D:\\chemi\\src\\main\\webapp\\resources\\images\\" + originName;
+//            File targetFile = new File(targetPath);
+//            vo.setFilePathList(targetFile);
 
-            sum += dao.insertCampImg(vo);
-        }
-        if(sum == filePathList.size()){
-            return 1;
-        }else {
-            throw new RuntimeException();
-        }
+//            sum += dao.insertCampImg(vo);
+//        }
+//        if(sum == filePathList.size()){
+//            return 1;
+//        }else {
+//            throw new RuntimeException();
+//        }
+        return 1;
 
     }
 }

@@ -1,7 +1,7 @@
-package com.chemi.reservation.service;
+package com.kh.camp.reservation.service;
 
-import com.chemi.reservation.dao.ReservationDao;
-import com.chemi.reservation.vo.ReservationVo;
+import com.kh.camp.reservation.dao.ReservationDao;
+import com.kh.camp.reservation.vo.ReservationVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

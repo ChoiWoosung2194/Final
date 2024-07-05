@@ -1,7 +1,7 @@
-package com.chemi.reservation.controller;
+package com.kh.camp.reservation.controller;
 
-import com.chemi.reservation.service.CampzoneService;
-import com.chemi.reservation.vo.CampzoneVo;
+import com.kh.camp.reservation.service.CampzoneService;
+import com.kh.camp.reservation.vo.CampzoneVo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

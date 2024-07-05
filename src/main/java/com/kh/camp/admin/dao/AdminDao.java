@@ -1,16 +1,13 @@
-package com.chemi.admin.dao;
+package com.kh.camp.admin.dao;
 
-import com.chemi.admin.mapper.AdminMapper;
-import com.chemi.admin.vo.AdminVo;
-import com.chemi.admin.vo.PrdImgVo;
-import com.chemi.admin.vo.ProductVo;
-import com.chemi.member.vo.MemberVo;
+
 import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.admin.mapper.AdminMapper;
+import com.kh.camp.admin.vo.AdminVo;
+import com.kh.camp.admin.vo.PrdImgVo;
+import com.kh.camp.admin.vo.ProductVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.Model;
-
-import java.security.AuthProvider;
 import java.util.List;
 
 @Repository

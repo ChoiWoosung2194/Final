@@ -1,4 +1,4 @@
-package com.chemi.owner.dao;
+package com.kh.camp.owner.dao;
 
 import com.chemi.owner.mapper.CampingMapper;
 import com.chemi.owner.vo.CampingVo;
