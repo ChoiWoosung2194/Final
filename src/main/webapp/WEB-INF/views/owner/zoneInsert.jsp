@@ -44,7 +44,7 @@ pageEncoding="UTF-8"%>
 				<button onclick="insertZone();">등록하기</button>
 
 			<hr>
-			<h3><strong>캠핑존 등록하기</strong></h3>
+			<h3><strong>캠핑존 사진 등록하기</strong></h3>
 			<hr>
 			    <form action="/owner/zone/img" method="post" enctype="multipart/form-data">
 			      <br>
