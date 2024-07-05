@@ -1,6 +1,6 @@
 package com.kh.camp.product.mapper;
 
-import com.chemi.product.vo.ProdVo;
+import com.kh.camp.product.vo.ProdVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

@@ -1,18 +1,17 @@
 package com.kh.camp.admin.service;
 
 
-import com.chemi.owner.vo.OwnerVo;
 import com.kh.camp.admin.dao.AdminDao;
 import com.kh.camp.admin.vo.AdminVo;
 import com.kh.camp.admin.vo.CombinedResponse;
 import com.kh.camp.admin.vo.PrdImgVo;
 import com.kh.camp.admin.vo.ProductVo;
+import com.kh.camp.owner.vo.OwnerVo;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import java.util.List;
 

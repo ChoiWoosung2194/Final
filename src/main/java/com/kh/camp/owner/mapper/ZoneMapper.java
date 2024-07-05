@@ -1,7 +1,7 @@
 package com.kh.camp.owner.mapper;
 
-import com.chemi.owner.vo.ZoneImgVo;
-import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.vo.ZoneImgVo;
+import com.kh.camp.owner.vo.ZoneVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

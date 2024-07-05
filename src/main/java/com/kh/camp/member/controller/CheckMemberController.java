@@ -1,8 +1,8 @@
 package com.kh.camp.member.controller;
 
 
-import com.chemi.member.service.CheckMemberService;
-import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.service.CheckMemberService;
+import com.kh.camp.member.vo.MemberVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 

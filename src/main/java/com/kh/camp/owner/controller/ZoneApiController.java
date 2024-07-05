@@ -1,8 +1,8 @@
 package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.ZoneService;
-import com.chemi.owner.vo.OwnerVo;
-import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.service.ZoneService;
+import com.kh.camp.owner.vo.OwnerVo;
+import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

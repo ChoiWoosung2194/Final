@@ -1,7 +1,7 @@
 package com.kh.camp.product.service;
 
-import com.chemi.product.vo.ProdVo;
 import com.kh.camp.product.dao.ProdDao;
+import com.kh.camp.product.vo.ProdVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.chemi.campuser.mapper;
+package com.kh.camp.campuser.mapper;
 
-import com.chemi.owner.vo.CampImgVo;
-import com.chemi.owner.vo.CampingVo;
+import com.kh.camp.owner.vo.CampImgVo;
+import com.kh.camp.owner.vo.CampingVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

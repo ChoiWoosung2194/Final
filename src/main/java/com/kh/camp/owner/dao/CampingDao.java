@@ -1,12 +1,10 @@
 package com.kh.camp.owner.dao;
 
-import com.chemi.owner.mapper.CampingMapper;
-import com.chemi.owner.vo.CampingVo;
-import com.chemi.owner.vo.ImgVo;
+import com.kh.camp.owner.mapper.CampingMapper;
+import com.kh.camp.owner.vo.CampingVo;
+import com.kh.camp.owner.vo.ImgVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 @RequiredArgsConstructor

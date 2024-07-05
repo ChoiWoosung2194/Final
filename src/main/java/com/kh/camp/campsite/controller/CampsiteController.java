@@ -1,7 +1,7 @@
 package com.kh.camp.campsite.controller;
 
 import com.chemi.campsite.vo.CampsiteVo;
-import com.chemi.campsite.service.CampsiteService;
+import com.kh.camp.campsite.service.CampsiteService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

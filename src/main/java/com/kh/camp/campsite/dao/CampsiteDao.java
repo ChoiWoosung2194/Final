@@ -1,7 +1,7 @@
 package com.kh.camp.campsite.dao;
 
-import com.chemi.campsite.mapper.CampsiteMapper;
 import com.chemi.campsite.vo.CampsiteVo;
+import com.kh.camp.campsite.mapper.CampsiteMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

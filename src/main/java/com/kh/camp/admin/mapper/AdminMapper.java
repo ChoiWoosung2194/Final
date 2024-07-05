@@ -1,9 +1,9 @@
 package com.kh.camp.admin.mapper;
 
-import com.chemi.owner.vo.OwnerVo;
 import com.kh.camp.admin.vo.AdminVo;
 import com.kh.camp.admin.vo.PrdImgVo;
 import com.kh.camp.admin.vo.ProductVo;
+import com.kh.camp.owner.vo.OwnerVo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

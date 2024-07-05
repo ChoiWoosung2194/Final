@@ -1,13 +1,11 @@
 package com.kh.camp.owner.mapper;
 
-import com.chemi.owner.vo.CampingVo;
-import com.chemi.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.CampingVo;
+import com.kh.camp.owner.vo.ImgVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-
-import java.util.List;
 
 @Mapper
 public interface CampingMapper {

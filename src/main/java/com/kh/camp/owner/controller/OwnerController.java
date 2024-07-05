@@ -1,7 +1,7 @@
 package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.OwnerService;
-import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.owner.service.OwnerService;
+import com.kh.camp.owner.vo.OwnerVo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

@@ -1,10 +1,10 @@
 package com.kh.camp.owner.controller;
 
 
-import com.chemi.owner.vo.CampingVo;
-import com.chemi.owner.vo.ImgVo;
-import com.chemi.owner.vo.OwnerVo;
 import com.kh.camp.owner.service.CampingService;
+import com.kh.camp.owner.vo.CampingVo;
+import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.OwnerVo;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -35,7 +35,7 @@ public class CampingController {
 
     //내 캠핑장 등록하기
     @PostMapping("camp/insert")
-    public String insertCamp(HttpSession session,CampingVo vo , MultipartFile zoneLayoutImg) throws Exception {
+    public String insertCamp(HttpSession session, CampingVo vo , MultipartFile zoneLayoutImg) throws Exception {
         OwnerVo ownerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String ownerNo = ownerVo.getNo();
         vo.setOwnerNo(ownerNo);
