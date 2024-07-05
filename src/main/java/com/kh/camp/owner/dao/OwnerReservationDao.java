@@ -1,7 +1,7 @@
 package com.kh.camp.owner.dao;
 
-import com.chemi.owner.mapper.OwnerReservationMapper;
-import com.chemi.owner.vo.OwnerReservationVo;
+import com.kh.camp.owner.mapper.OwnerReservationMapper;
+import com.kh.camp.owner.vo.OwnerReservationVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

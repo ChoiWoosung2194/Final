@@ -1,10 +1,8 @@
 package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.CampNoticeService;
-import com.chemi.owner.vo.CampNoticeVo;
-import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.owner.service.CampNoticeService;
+import com.kh.camp.owner.vo.CampNoticeVo;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,8 +1,8 @@
 package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.OwnerReservationService;
-import com.chemi.owner.vo.OwnerVo;
-import com.chemi.owner.vo.OwnerReservationVo;
+import com.kh.camp.owner.service.OwnerReservationService;
+import com.kh.camp.owner.vo.OwnerReservationVo;
+import com.kh.camp.owner.vo.OwnerVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

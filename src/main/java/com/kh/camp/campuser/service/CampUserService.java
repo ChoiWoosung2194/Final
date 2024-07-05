@@ -1,8 +1,7 @@
-package com.chemi.campuser.service;
+package com.kh.camp.campuser.service;
 
-import com.chemi.campuser.dao.CampUserDao;
-import com.chemi.owner.vo.CampImgVo;
-import com.chemi.owner.vo.CampingVo;
+import com.kh.camp.campuser.dao.CampUserDao;
+import com.kh.camp.owner.vo.CampingVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +24,9 @@ public class CampUserService {
         return dao.getCampingDetail(campNo);
     }
 
-    public List<CampImgVo> getCampImgList(String campNo) {
-        return dao.getCampImgList(campNo);
-    }
+//    public List<CampImgVo> getCampImgList(String campNo) {
+//        return dao.getCampImgList(campNo);
+//    }
 
     public List<CampingVo> campNameSelect() {
         return dao.campNameSelect();

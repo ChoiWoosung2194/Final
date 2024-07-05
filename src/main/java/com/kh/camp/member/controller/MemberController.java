@@ -1,7 +1,7 @@
 package com.kh.camp.member.controller;
 
-import com.chemi.member.service.MemberService;
-import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.service.MemberService;
+import com.kh.camp.member.vo.MemberVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

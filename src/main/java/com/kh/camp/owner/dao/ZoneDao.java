@@ -1,8 +1,8 @@
 package com.kh.camp.owner.dao;
 
-import com.chemi.owner.mapper.ZoneMapper;
-import com.chemi.owner.vo.ZoneImgVo;
-import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.mapper.ZoneMapper;
+import com.kh.camp.owner.vo.ZoneImgVo;
+import com.kh.camp.owner.vo.ZoneVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package com.kh.camp.owner.service;
 
-import com.chemi.owner.vo.CampNoticeVo;
 import com.kh.camp.owner.dao.CampNoticeDao;
+import com.kh.camp.owner.vo.CampNoticeVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,13 +1,14 @@
 package com.kh.camp.admin.dao;
 
 
-import com.chemi.owner.vo.OwnerVo;
 import com.kh.camp.admin.mapper.AdminMapper;
 import com.kh.camp.admin.vo.AdminVo;
 import com.kh.camp.admin.vo.PrdImgVo;
 import com.kh.camp.admin.vo.ProductVo;
+import com.kh.camp.owner.vo.OwnerVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 @Repository

@@ -1,8 +1,8 @@
 package com.kh.camp.product.controller;
 
 
-import com.chemi.product.service.ProdService;
-import com.chemi.product.vo.ProdVo;
+import com.kh.camp.product.service.ProdService;
+import com.kh.camp.product.vo.ProdVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

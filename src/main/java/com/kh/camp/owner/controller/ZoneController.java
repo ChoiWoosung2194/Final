@@ -1,8 +1,8 @@
 package com.kh.camp.owner.controller;
 
-import com.chemi.owner.service.ZoneService;
-import com.chemi.owner.vo.ZoneImgVo;
-import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.service.ZoneService;
+import com.kh.camp.owner.vo.ZoneImgVo;
+import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -10,10 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.util.List;
 
 @Controller
 @RequestMapping("owner")

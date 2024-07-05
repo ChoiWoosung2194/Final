@@ -1,6 +1,6 @@
 package com.kh.camp.owner.mapper;
 
-import com.chemi.owner.vo.OwnerReservationVo;
+import com.kh.camp.owner.vo.OwnerReservationVo;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

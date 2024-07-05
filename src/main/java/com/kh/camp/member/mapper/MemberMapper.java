@@ -1,6 +1,6 @@
 package com.kh.camp.member.mapper;
 
-import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.vo.MemberVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

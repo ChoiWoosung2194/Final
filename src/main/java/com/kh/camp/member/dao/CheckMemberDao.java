@@ -1,8 +1,8 @@
 package com.kh.camp.member.dao;
 
 
-import com.chemi.member.mapper.CheckMemberMapper;
-import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.mapper.CheckMemberMapper;
+import com.kh.camp.member.vo.MemberVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

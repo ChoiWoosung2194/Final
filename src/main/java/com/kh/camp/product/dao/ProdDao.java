@@ -1,7 +1,7 @@
 package com.kh.camp.product.dao;
 
-import com.chemi.product.mapper.ProdMapper;
-import com.chemi.product.vo.ProdVo;
+import com.kh.camp.product.mapper.ProdMapper;
+import com.kh.camp.product.vo.ProdVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
