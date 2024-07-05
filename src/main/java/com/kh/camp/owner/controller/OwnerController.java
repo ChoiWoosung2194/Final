@@ -1,4 +1,4 @@
-package com.chemi.owner.controller;
+package com.kh.camp.owner.controller;
 
 import com.chemi.owner.service.OwnerService;
 import com.chemi.owner.vo.OwnerVo;

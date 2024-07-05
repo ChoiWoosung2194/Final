@@ -1,4 +1,4 @@
-package com.chemi.member.mapper;
+package com.kh.camp.member.mapper;
 
 
 import com.chemi.member.vo.MemberVo;

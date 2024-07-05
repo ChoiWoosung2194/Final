@@ -1,4 +1,4 @@
-package com.chemi.home.controller;
+package com.kh.camp.home.controller;
 
 
 import org.springframework.stereotype.Controller;

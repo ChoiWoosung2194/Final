@@ -1,4 +1,4 @@
-package com.chemi.campsite.controller;
+package com.kh.camp.campsite.controller;
 
 import com.chemi.campsite.vo.CampsiteVo;
 import com.chemi.campsite.service.CampsiteService;
