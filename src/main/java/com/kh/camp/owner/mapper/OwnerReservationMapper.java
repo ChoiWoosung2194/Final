@@ -1,10 +1,11 @@
 package com.kh.camp.owner.mapper;
 
 import com.kh.camp.owner.vo.OwnerReservationVo;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
-
+@Mapper
 public interface OwnerReservationMapper {
 
     @Select("SELECT RD.NO AS RESERVATION_NO, M.NAME AS MEMBER_NAME ,R.START_DATE AS START_DATE , R.END_DATE AS END_DATE, R.COUNT AS COUNT ,Z.NAME AS ZONE_NAME, Z.PRICE AS PRICE \n" +
