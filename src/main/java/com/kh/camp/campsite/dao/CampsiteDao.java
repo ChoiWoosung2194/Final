@@ -1,4 +1,4 @@
-package com.chemi.campsite.dao;
+package com.kh.camp.campsite.dao;
 
 import com.chemi.campsite.mapper.CampsiteMapper;
 import com.chemi.campsite.vo.CampsiteVo;

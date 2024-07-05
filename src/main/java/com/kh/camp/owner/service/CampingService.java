@@ -1,8 +1,6 @@
 package com.kh.camp.owner.service;
 
-import com.chemi.owner.vo.CampingVo;
-import com.chemi.owner.vo.ImgVo;
-import com.kh.camp.owner.dao.CampingDao;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

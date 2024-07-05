@@ -1,4 +1,4 @@
-package com.chemi.product.mapper;
+package com.kh.camp.product.mapper;
 
 import com.chemi.product.vo.ProdVo;
 import org.apache.ibatis.annotations.Mapper;

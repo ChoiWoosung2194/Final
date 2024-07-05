@@ -1,4 +1,4 @@
-package com.chemi.member.controller;
+package com.kh.camp.member.controller;
 
 import com.chemi.member.service.MemberService;
 import com.chemi.member.vo.MemberVo;

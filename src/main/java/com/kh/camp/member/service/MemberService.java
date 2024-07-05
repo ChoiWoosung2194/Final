@@ -1,12 +1,11 @@
-package com.chemi.member.service;
+package com.kh.camp.member.service;
 
-import com.chemi.member.dao.MemberDao;
 import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.dao.MemberDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
-
 @Service
 @RequiredArgsConstructor
 public class MemberService {

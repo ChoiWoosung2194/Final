@@ -1,4 +1,4 @@
-package com.chemi.product.dao;
+package com.kh.camp.product.dao;
 
 import com.chemi.product.mapper.ProdMapper;
 import com.chemi.product.vo.ProdVo;

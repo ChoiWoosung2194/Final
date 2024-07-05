@@ -1,7 +1,7 @@
-package com.chemi.member.service;
+package com.kh.camp.member.service;
 
-import com.chemi.member.dao.CheckMemberDao;
 import com.chemi.member.vo.MemberVo;
+import com.kh.camp.member.dao.CheckMemberDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.chemi.owner.vo;
+package com.kh.camp.owner.vo;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;

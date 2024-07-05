@@ -1,8 +1,8 @@
-package com.chemi.owner.service;
+package com.kh.camp.owner.service;
 
 
-import com.chemi.owner.dao.OwnerDao;
 import com.chemi.owner.vo.OwnerVo;
+import com.kh.camp.owner.dao.OwnerDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

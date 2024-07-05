@@ -1,4 +1,4 @@
-package com.chemi.member.vo;
+package com.kh.camp.member.vo;
 
 import lombok.Data;
 

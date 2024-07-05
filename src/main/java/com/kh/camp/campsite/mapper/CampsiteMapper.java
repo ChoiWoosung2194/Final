@@ -1,4 +1,4 @@
-package com.chemi.campsite.mapper;
+package com.kh.camp.campsite.mapper;
 
 import com.chemi.campsite.vo.CampsiteVo;
 import org.apache.ibatis.annotations.Mapper;
