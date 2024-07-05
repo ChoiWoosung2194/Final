@@ -1,4 +1,4 @@
-package com.chemi.owner.vo;
+package com.kh.camp.owner.vo;
 
 import lombok.Data;
 
@@ -7,6 +7,6 @@ import java.util.List;
 @Data
 public class CampDetailVo {
 
-    private CampingVo campingVo;
-    private List<CampImgVo> campImgVoList;
+    private ImgVo campingVo;
+    private List<ImgVo> campImgVoList;
 }

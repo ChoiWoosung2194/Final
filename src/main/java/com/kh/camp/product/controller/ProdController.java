@@ -1,4 +1,4 @@
-package com.chemi.product.controller;
+package com.kh.camp.product.controller;
 
 
 import com.chemi.product.service.ProdService;

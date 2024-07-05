@@ -1,4 +1,4 @@
-package com.chemi.owner.dao;
+package com.kh.camp.owner.dao;
 
 import com.chemi.owner.mapper.ZoneMapper;
 import com.chemi.owner.vo.ZoneImgVo;

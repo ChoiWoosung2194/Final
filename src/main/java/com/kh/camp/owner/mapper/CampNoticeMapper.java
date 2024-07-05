@@ -1,4 +1,4 @@
-package com.chemi.owner.mapper;
+package com.kh.camp.owner.mapper;
 
 import com.chemi.owner.vo.CampNoticeVo;
 import com.chemi.owner.vo.CampingVo;

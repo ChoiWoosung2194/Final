@@ -1,4 +1,4 @@
-package com.chemi.owner.controller;
+package com.kh.camp.owner.controller;
 
 import com.chemi.owner.service.CampNoticeService;
 import com.chemi.owner.vo.CampNoticeVo;

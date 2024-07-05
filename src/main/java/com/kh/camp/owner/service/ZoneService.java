@@ -1,8 +1,8 @@
-package com.chemi.owner.service;
+package com.kh.camp.owner.service;
 
-import com.chemi.owner.dao.ZoneDao;
 import com.chemi.owner.vo.ZoneImgVo;
 import com.chemi.owner.vo.ZoneVo;
+import com.kh.camp.owner.dao.ZoneDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
