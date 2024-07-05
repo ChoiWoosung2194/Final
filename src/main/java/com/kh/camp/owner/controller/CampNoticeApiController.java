@@ -5,6 +5,7 @@ import com.kh.camp.owner.vo.CampNoticeVo;
 import com.kh.camp.owner.vo.OwnerVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +31,8 @@ public class CampNoticeApiController {
     }
 
     //캠핑장 공지사항 작성하기 (처리)
-    @PostMapping("insert")
-    public String insertNotice(HttpSession session , CampNoticeVo vo){
+    @PostMapping
+    public ResponseEntity<String> insertNotice(HttpSession session , CampNoticeVo vo){
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String ownerNo = loginOwnerVo.getNo();
         vo.setOwnerNo(ownerNo);
@@ -39,9 +40,10 @@ public class CampNoticeApiController {
         int result = service.insertNotice(vo);
 
         if(result != 1){
-            throw new RuntimeException("작성이 실패하였습니다.");
+            return ResponseEntity.internalServerError().body("등록에 실패하였습니다.");
+        }else {
+            return ResponseEntity.ok("등록 되었습니다.");
         }
 
-        return "redirect:/owner/notice/list";
     }
 }

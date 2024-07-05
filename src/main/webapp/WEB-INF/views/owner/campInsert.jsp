@@ -64,7 +64,7 @@ pageEncoding="UTF-8"%>
 			</form>
 
 			<hr>
-			<h3><strong>캠핑장 등록하기</strong></h3>
+			<h3><strong>캠핑장 사진 등록하기</strong></h3>
 			<hr>
 			<form action="/owner/campImg" method="post">
 				<br>

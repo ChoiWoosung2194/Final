@@ -34,15 +34,15 @@ pageEncoding="UTF-8"%>
         <h3><strong>공지사항 등록하기</strong></h3>
 
 			<hr>
-			<form  action="/owner/notice/insert" method="post"  >
+			
 				<input type="text" name="title" placeholder="제목">
 				<br>
 				<br>
 				<textarea style="width: 400px; height: 300px;" name="content" placeholder="공지사항 내용"></textarea>
 				<br>
 				<br>
-				<input type="submit" value="작성하기">
-			</form>
+				<button onclick="insertNotice();">작성하기</button>
+				
          <!---------------------------------------------------------------------------------->
 </section>
 
@@ -51,3 +51,31 @@ pageEncoding="UTF-8"%>
 
 	</body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+	function insertNotice(){
+
+		const title = document.querySelector("input[name = title]").value;
+		const content = document.querySelector("textarea[name = content]").value;
+	
+		$.ajax({
+			url : "http://127.0.0.1:8080/owner/api/notice",
+			method : "post",
+			data : {
+				title : title ,
+				content : content
+			},
+			success : function(x){
+				alert(x);
+	
+				location.href="/owner/main";
+			},
+			error : function(error){
+					console.log(error);
+			},
+		});
+	}
+
+</script>
+

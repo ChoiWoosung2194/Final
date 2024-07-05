@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%>
         <h3><strong>내 캠핑장</strong></h3>
 
 			<hr>
-				캠핑장 썸네일 이미지 <img style="height: 300px; width: 300px;" src="${voList.zoneLayoutImg}" >
+				캠핑장 썸네일 이미지 <img style="height: 300px; width: 300px;" src="/resources/images/${voList.}" >
 				<br>
 				<br>
 				지역 :: <input type="text" name="area" value="${voList.area}" readonly>

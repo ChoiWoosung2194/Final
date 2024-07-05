@@ -40,14 +40,21 @@ public class CampingController {
         String ownerNo = ownerVo.getNo();
         vo.setOwnerNo(ownerNo);
 
-        MultipartFile att = zoneLayoutImg;
 
-        String originName = att.getOriginalFilename();
-        String targetPath = "D:\\chemi\\src\\main\\webapp\\resources\\images\\" + originName;
+
+        String originName = zoneLayoutImg.getOriginalFilename();
+        String targetPath ="D:/campot/src/main/webapp/resources/images/" + originName;
         File targetFile = new File(targetPath);
+
+        // 파일 저장 경로의 디렉토리 존재 여부 확인 및 생성
+//        if (!targetFile.getParentFile().exists()) {
+//            targetFile.getParentFile().mkdirs();
+//        }
+
+
         zoneLayoutImg.transferTo(targetFile);
 
-        vo.setZoneImg(targetPath);
+//        vo.setZoneLayoutImg(originName);//Todo : string 을 멀티파트파일 타입으로 변경해서 보내기
 
         int result = service.insertCamp(vo);
         System.out.println("result = " + result);
@@ -65,6 +72,7 @@ public class CampingController {
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String no = loginOwnerVo.getNo();
         CampingVo voList = service.getCampByNo(no);
+        System.out.println("voList = " + voList);
         model.addAttribute("voList" , voList);
         return "owner/camping";
     }

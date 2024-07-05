@@ -13,6 +13,7 @@ public class CampingDao {
     private final CampingMapper mapper;
 
     public CampingVo getCampByNo(String no) {
+        System.out.println("no = " + no);
         return mapper.getCampByNo(no);
     }
 
