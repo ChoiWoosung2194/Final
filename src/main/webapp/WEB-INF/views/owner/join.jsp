@@ -62,7 +62,7 @@
 						<!-- <section class="module bg-dark-30 about-page-header"
 						data-background="../../resources/images/addGeneralUserImg.png"> -->
 						<div class="container" style="padding-top: 72px;">
-							<img src="../../resources/images/addBusinessUserImg.png" alt="">
+							<img src="/resources/images/ownerJoin.png" alt=""> <!--이미지 바꾸기-->
 						</div>
 						<!-- </section> -->
 						<section class="module" style="padding-top:0;">

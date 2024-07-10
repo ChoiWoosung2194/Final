@@ -117,6 +117,11 @@ public class CampingController {
     }
 
     //캠핑장 일정 관리(캘린더api)
+    @GetMapping("calender")
+    public String calender(){
+        return "/owner/calender";
+    }
+
 
     //캠핑장 사진 업로드
     @PostMapping("campImg")

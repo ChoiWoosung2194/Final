@@ -18,14 +18,10 @@ public interface ZoneMapper {
             "(SEQ_ZONE_NO.NEXTVAL, #{ownerNo}, '1', #{name}, #{maxPeople}, #{price} )")
     int zoneInsert(ZoneVo vo);
 
-    @Select("SELECT Z.CAMPSITE_NO , Z.SEASON_NO, Z.MAX_PEOPLE, Z.PRICE, Z.NAME\n" +
-            "FROM ZONE Z\n" +
-            "JOIN CAMPSITE C\n" +
-            "ON Z.CAMPSITE_NO = C.NO\n" +
-            "JOIN SEASON S\n" +
-            "ON Z.SEASON_NO = S.NO\n" +
-            "JOIN OWNER O\n" +
-            "ON C.OWNER_NO = O.NO\n" +
+    @Select("SELECT  Z.SEASON_NO, Z.MAX_PEOPLE, Z.PRICE, Z.NAME \n" +
+            "FROM ZONE Z \n" +
+            "JOIN SEASON S ON Z.SEASON_NO = S.NO \n" +
+            "JOIN OWNER O ON Z.OWNER_NO = O.NO \n" +
             "WHERE O.NO = #{no}")
     List<ZoneVo> selectZone(String no);
 
