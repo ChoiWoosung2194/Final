@@ -33,13 +33,20 @@
             color: #333;
             text-overflow: ellipsis;
         }
+        .mainHead{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp" />
-        
+        <div id="mainHead">
+            <img src="/resources/images/campHead.jpg" alt=""></img>
+        </div>
         <div class="main showcase-page">
             <section class="module-medium" id="demos">
                 <div class="container">
@@ -51,41 +58,55 @@
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <div class="post">
-                            <div class="post-thumbnail"><img class="campImg" campNo="${topView.campNo}" style="cursor: pointer;" src="/uploadfiles/campimg/campbusiness/camp/${topView.campImg1}" alt="Blog-post Thumbnail"></div>
+                             <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
+                                <div class="post-header font-alt">
+                                    <h2 class="post-title">캠핑장 1</h2>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="post">
+                            <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
                             <div class="post-header font-alt">
-                                <h2 class="post-title">조회수 TOP</a></h2>
-                            </div>
-                            <div class="post-more">${topView.user.campName} <span style="color: rgb(230, 173, 17);">(${topView.campViewCountCurrentMonth}건)</span></div>
-                            <div class="post-entry">
-                                <p>${topView.user.addr}</p>
+                                <h2 class="post-title">캠핑장 1</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <div class="post">
-                            <div class="post-thumbnail"><img class="campImg" campNo="${topRating.campNo}" style="cursor: pointer;" src="/uploadfiles/campimg/campbusiness/camp/${topRating.campImg1}" alt="Blog-post Thumbnail"></div>
-                            <div class="post-header font-alt">
-                                <h2 class="post-title">평점 TOP</a></h2>
-                            </div>
-                            <div class="post-more">${topRating.user.campName} <span style="color: rgb(230, 173, 17);">(${topRating.campRate}점)</span></div>
-                            <div class="post-entry">
-                                <p>${topRating.user.addr}</p>
-                            </div>
+                             <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
+                                <div class="post-header font-alt">
+                                    <h2 class="post-title">캠핑장 1</h2>
+                                </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <div class="post">
-                            <div class="post-thumbnail"><img class="campImg" campNo="${topReservation.campNo}" style="cursor: pointer;" src="/uploadfiles/campimg/campbusiness/camp/${topReservation.campImg1}" alt="Blog-post Thumbnail"></div>
-                            <div class="post-header font-alt">
-                                <h2 class="post-title">예약자수 TOP</a></h2>
-                            </div>
-                            <div class="post-more">${topReservation.user.campName} <span style="color: rgb(230, 173, 17);">(${topReservation.campReservationCount}건)</span></div>
-                            <div class="post-entry">
-                                <p>${topReservation.user.addr}</p>
+                            <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
+                                 <div class="post-header font-alt">
+                                     <h2 class="post-title">캠핑장 1</h2>
+                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="post">
+                        <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
+                            <div class="post-header font-alt">
+                                <h2 class="post-title">캠핑장 1</h2>
+                            </div>
+                  </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                 <div class="post">
+                    <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/MTB.png" alt=""></div>
+                        <div class="post-header font-alt">
+                     <h2 class="post-title">캠핑장 1</h2>
+                  </div>
+                  </div>
+            </div>
+        </div>
+
+
             </section>
            
             
