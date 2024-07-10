@@ -9,23 +9,32 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("user")
+@RequestMapping("member")
 public class MemberController {
 
   private final MemberService service;
 
-  @GetMapping("addUser")
-  public String addUser() {
-    return "home/main";
+  @GetMapping("login")
+  public String login() {
+    return "member/login";
   }
 
-  @PostMapping("addUser")
-  public int join(MemberVo vo) throws Exception {
+  @GetMapping("join")
+  public String join() {
+    return "member/join";
+  }
+
+  @PostMapping("join")
+  public String join(MemberVo vo) throws Exception {
     System.out.println("vo = " + vo);
     int result = service.join(vo);
     System.out.println("result = " + result);
-    return result;
+    if(result !=1 ){
+      throw new RuntimeException("회원가입 실패");
+    }
+    return "redirect:/home";
   }
+
 
   @PostMapping("login")
   public String login(MemberVo vo, HttpSession ss) {
@@ -37,31 +46,7 @@ public class MemberController {
     }
     System.out.println("vo = " + vo);
     System.out.println("loginResult = " + loginResult);
-    return "redirect:/login?error"; // 로그인 실패 시 리다이렉트할 페이지
-  }
-
-  @GetMapping("selectId")
-  public MemberVo selectId(MemberVo vo) {
-    return service.selectId(vo);
-  }
-
-  @GetMapping("selectPwd")
-  public MemberVo selectPwd(MemberVo vo) {
-    return service.selectPwd(vo);
-  }
-
-  @PutMapping("changePwd")
-  public String changePwd(@RequestBody MemberVo vo) {
-    return service.changePwd(vo);
-  }
-
-  @PostMapping("delUser")
-  public String delUser(@RequestBody MemberVo vo) {
-    return service.delUser(vo);
-  }
-
-  @GetMapping("myPage")
-  public String myPage(@RequestBody MemberVo vo) {
-    return service.myPage(vo);
+    return "redirect:/login/error"; // 로그인 실패 시 리다이렉트할 페이지
   }
 }
+

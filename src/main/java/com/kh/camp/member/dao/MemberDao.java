@@ -20,26 +20,4 @@ public class MemberDao {
     return mapper.login(vo);
   }
 
-  public MemberVo selectId(MemberVo vo) {
-
-    return mapper.selectId(vo);
-  }
-
-  public MemberVo selectPwd(MemberVo vo) {
-
-    return mapper.selectPwd(vo);
-  }
-
-  public int changePwd(MemberVo vo) {
-    return mapper.changePwd(vo);
-  }
-
-  public int delUser(MemberVo vo) {
-    return mapper.delUser(vo);
-  }
-
-  public String myPage(MemberVo vo) {
-
-    return mapper.myPage(vo);
-  }
 }

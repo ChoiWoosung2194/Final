@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -8,7 +10,7 @@
 </head>
 <body>
     <h2>회원가입</h2>
-    <form action="/member/join" method="post">
+    <form action="/member/login" method="post">
         <label for="id">아이디:</label>
         <input type="text" id="id" name="id" required><br>
         
