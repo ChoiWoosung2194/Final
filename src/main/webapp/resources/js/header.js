@@ -1,180 +1,180 @@
 ////============= logout Event =============
-//$(document).ready(function(){
-//
-//	// $("#modalBasic").on("click", ()=>{
-//	// 	$('#modalBasic').show();
-//	// })
-//
-//	$('#header-login').magnificPopup({
-//		type: 'inline',
-//		preloader: false,
-//		focus: '#id'
-//	});
-//
-//	$(document).on('click', '.modal-dismiss', function (e) {
-//		e.preventDefault();
-//		$.magnificPopup.close();
-//	});
-//
-//
-//	//휴대폰 인증번호 받기
-//	$("#findIdPhoneAuthNum").on("click", function() {
-//
-//		$("#findIdPhoneAuthNum").text("인증번호 재발송");
-//		$("#findId-check-phone").hide();
-//		$("#findIdCheckPhoneAuth").show();
-//		var phone=$("input[name='phone']").val();
-//
-//		$.ajax({
-//			url : '/user/rest/sendPhoneAuthNum/'+phone,
-//				headers :{
-//				"Accept" : "application/json",
-//				"Content-Type" : "application/json"
-//			},
-//			method : 'GET',
-//			//dataType:'json',
-//			//data : JSON.stringify({"phone" : phone}),
-//			success : function(dataa) {
-//				console.log('성공: '+dataa);
-//
-//				$("#findIdCheckPhoneAuthNum").on("keyup", function() {
-//					console.log('되는가');
-//					var ab=$("#findIdCheckPhoneAuthNum").val();
-//
-//					if(ab.length>0){
-//						if(dataa == ab){
-//							$("#findId-check-phone-auth").html("인증번호가 일치합니다.");
-//						}else{
-//							$("#findId-check-phone-auth").html('인증번호를 확인하세요.');
-//						}
-//					}
-//				});
-//			}
-//		});
-//	});
-//
-//	//	$("#modalId").focus();
-//	$("button:contains(아이디찾기)").on("click" , function() {
-//		//alert("gkgkgkgk");
-// 		var name=$("#findIdName").val();
-//		var phone=$("#findIdPhone").val();
-//
-//		if(name == null || name.length <1) {
-//			alert('이름을 입력하지 않으셨습니다.');
-//			$("#findIdName").focus();
-//			return;
-//		}
-//
-//		if(phone == null || phone.length <1) {
-//			alert('휴대폰번호를 입력하지 않으셨습니다.');
-//			$("#findIdPhone").focus();
-//			return;
-//		}
-//
-//
-// 		$.ajax({
-//			url : '/user/rest/findId',
-//		/* 	 headers :{
-//				"Accept" : "application/json",
-//				"Content-Type" : "application/json"
-//			},  */
-//			method : 'POST',
-//			//dataType:'json',
-//			data : {
-//				"name" :name,
-//				"phone":phone
-//			},
-//			success : function(data) {
-//
-//				console.log('성공: '+data);
-//				if(data!=null){
-//					var email=data;
-//					var split = data.split('@');
-//					var result = split[0].replace(/(?<=.{3})./gi,"*")+"@"+split[1];
-//
-//					Swal.fire(result).then(()=>{
-//						self.location = "/";
-//					});
-//				} else{
-//					Swal.fire("가입되지 않은 정보입니다. 다시 확인바랍니다.").then(()=>{
-//						self.location = "/";
-//					});
-//				}
-//			}
-//		});
-//
-//	});
-//
-//	$("button:contains(비밀번호찾기)").on("click" , function() {
-//		//alert("gkgkgkgk");
-// 		var id=$("#findPwdId").val();
-//		var name=$("#findPwdName").val();
-//		var phone=$("#findPwdPhone").val();
-//		var split = id.split('@');
-//		var result = split[0].replace(/(?<=.{3})./gi,"*")+"@"+split[1];
-//
-//		if(name == null || name.length <1) {
-//			alert('이름을 입력하지 않으셨습니다.');
-//			$("#findIdName").focus();
-//			return;
-//		}
-//
-//		if(phone == null || phone.length <1) {
-//			alert('휴대폰번호를 입력하지 않으셨습니다.');
-//			$("#findIdPhone").focus();
-//			return;
-//		}
-//
-//
-// 		$.ajax({
-//			url : '/user/rest/findPassword',
-//		 	 headers :{
-//				"Accept" : "application/json",
-//				"Content-Type" : "application/json"
-//			},
-//			method : 'POST',
-//			dataType:'json',
-//			data : JSON.stringify({
-//				"id" : id,
-//				"name" :name,
-//				"phone":phone
-//			}),
-//			success : function(data) {
-//
-//				console.log('성공: '+data);
-//				if(data==1){
-//
-//					result=id+"로 임시 비밀번호가 발송되었습니다";
-//					Swal.fire(result).then(()=>{
-//						self.location = "/";
-//					});
-//				} else{
-//					Swal.fire("가입되지 않은 회원입니다. 회원가입 후 이용바랍니다.").then(()=>{
-//						self.location = "/";
-//					});
-//				}
-//			}
-//		});
-//
-//	});
-//
-//
-//	// 로그아웃
-//	$("#logout").on("click" , function() {
-//		//$(self.location).attr("href","/user/logout");
-//		self.location = "/user/logout"
-//	});
-//
-//	$("#joinUser").on("click" , function() {
-//		//$(self.location).attr("href","/user/logout");
-//		self.location = "/user/addUser"
-//	});
-//
-//	$("#joinBusinessUser").on("click" , function() {
-//		self.location = "/user/addBusinessUser"
-//	});
-//
-//	// $("#id").focus();
+$(document).ready(function(){
+
+	// $("#modalBasic").on("click", ()=>{
+	// 	$('#modalBasic').show();
+	// })
+
+	$('#header-login').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#id'
+	});
+
+	$(document).on('click', '.modal-dismiss', function (e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+	});
+
+
+	//휴대폰 인증번호 받기
+	$("#findIdPhoneAuthNum").on("click", function() {
+
+		$("#findIdPhoneAuthNum").text("인증번호 재발송");
+		$("#findId-check-phone").hide();
+		$("#findIdCheckPhoneAuth").show();
+		var phone=$("input[name='phone']").val();
+
+		$.ajax({
+			url : '/user/rest/sendPhoneAuthNum/'+phone,
+				headers :{
+				"Accept" : "application/json",
+				"Content-Type" : "application/json"
+			},
+			method : 'GET',
+			//dataType:'json',
+			//data : JSON.stringify({"phone" : phone}),
+			success : function(dataa) {
+				console.log('성공: '+dataa);
+
+				$("#findIdCheckPhoneAuthNum").on("keyup", function() {
+					console.log('되는가');
+					var ab=$("#findIdCheckPhoneAuthNum").val();
+
+					if(ab.length>0){
+						if(dataa == ab){
+							$("#findId-check-phone-auth").html("인증번호가 일치합니다.");
+						}else{
+							$("#findId-check-phone-auth").html('인증번호를 확인하세요.');
+						}
+					}
+				});
+			}
+		});
+	});
+
+	//	$("#modalId").focus();
+	$("button:contains(아이디찾기)").on("click" , function() {
+		//alert("gkgkgkgk");
+ 		var name=$("#findIdName").val();
+		var phone=$("#findIdPhone").val();
+
+		if(name == null || name.length <1) {
+			alert('이름을 입력하지 않으셨습니다.');
+			$("#findIdName").focus();
+			return;
+		}
+
+		if(phone == null || phone.length <1) {
+			alert('휴대폰번호를 입력하지 않으셨습니다.');
+			$("#findIdPhone").focus();
+			return;
+		}
+
+
+ 		$.ajax({
+			url : '/user/rest/findId',
+		/* 	 headers :{
+				"Accept" : "application/json",
+				"Content-Type" : "application/json"
+			},  */
+			method : 'POST',
+			//dataType:'json',
+			data : {
+				"name" :name,
+				"phone":phone
+			},
+			success : function(data) {
+
+				console.log('성공: '+data);
+				if(data!=null){
+					var email=data;
+					var split = data.split('@');
+					var result = split[0].replace(/(?<=.{3})./gi,"*")+"@"+split[1];
+
+					Swal.fire(result).then(()=>{
+						self.location = "/";
+					});
+				} else{
+					Swal.fire("가입되지 않은 정보입니다. 다시 확인바랍니다.").then(()=>{
+						self.location = "/";
+					});
+				}
+			}
+		});
+
+	});
+
+	$("button:contains(비밀번호찾기)").on("click" , function() {
+		//alert("gkgkgkgk");
+ 		var id=$("#findPwdId").val();
+		var name=$("#findPwdName").val();
+		var phone=$("#findPwdPhone").val();
+		var split = id.split('@');
+		var result = split[0].replace(/(?<=.{3})./gi,"*")+"@"+split[1];
+
+		if(name == null || name.length <1) {
+			alert('이름을 입력하지 않으셨습니다.');
+			$("#findIdName").focus();
+			return;
+		}
+
+		if(phone == null || phone.length <1) {
+			alert('휴대폰번호를 입력하지 않으셨습니다.');
+			$("#findIdPhone").focus();
+			return;
+		}
+
+
+ 		$.ajax({
+			url : '/user/rest/findPassword',
+		 	 headers :{
+				"Accept" : "application/json",
+				"Content-Type" : "application/json"
+			},
+			method : 'POST',
+			dataType:'json',
+			data : JSON.stringify({
+				"id" : id,
+				"name" :name,
+				"phone":phone
+			}),
+			success : function(data) {
+
+				console.log('성공: '+data);
+				if(data==1){
+
+					result=id+"로 임시 비밀번호가 발송되었습니다";
+					Swal.fire(result).then(()=>{
+						self.location = "/";
+					});
+				} else{
+					Swal.fire("가입되지 않은 회원입니다. 회원가입 후 이용바랍니다.").then(()=>{
+						self.location = "/";
+					});
+				}
+			}
+		});
+
+	});
+
+
+	// 로그아웃
+	$("#logout").on("click" , function() {
+		//$(self.location).attr("href","/user/logout");
+		self.location = "/user/logout"
+	});
+
+	$("#joinUser").on("click" , function() {
+		//$(self.location).attr("href","/user/logout");
+		self.location = "/user/addUser"
+	});
+
+	$("#joinBusinessUser").on("click" , function() {
+		self.location = "/user/addBusinessUser"
+	});
+
+	// $("#id").focus();
 	$("#loginBtn").on("click" , function() {
 
 		var id=$("input:text").val();
