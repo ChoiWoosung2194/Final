@@ -10,7 +10,7 @@
 				<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 				<jsp:include page="/resources/commonLib.jsp"></jsp:include>
 
-				<title>사업자 회원가입</title>
+				<title>사업자 로그인</title>
 
 				<style>
 					.form-group .btn {
