@@ -62,7 +62,7 @@
 						<!-- <section class="module bg-dark-30 about-page-header"
 						data-background="../../resources/images/addGeneralUserImg.png"> -->
 						<div class="container" style="padding-top: 72px;">
-							<img src="../../resources/images/ownerLogin.png" alt="">
+							<img src="../../resources/images/memberLogin.png" alt="">
 						</div>
 						<!-- </section> -->
 						<section class="module" style="padding-top:0;">
@@ -85,7 +85,7 @@
 										<input type="submit" value="로그인">
 
 										</form>
-
+                                        <a href="/member/join"><button>회원 가입</button></a>
 
 									</div>
 								</div>

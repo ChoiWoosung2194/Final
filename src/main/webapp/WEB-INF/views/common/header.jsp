@@ -93,11 +93,11 @@
 
                      <!-- 로그인/로그아웃 Start -->
                      <li>
-                        <c:if test="${sessionScope.user.role==null}">
-                           <a class="modal-basic" href="#modalBasic" id="header-login"><button
+
+                           <a class="modal-basic" href="/member/login" id="header-login"><button
                                  class="btn btn-border-w btn-round btn-xs main-login-btn"
                                  type="button">LOGIN</button></a>
-                        </c:if>
+
                      </li>
                      <!-- 로그인/로그아웃 End -->
 
@@ -110,10 +110,5 @@
          </nav>
          <!-- 상단해더 End -->
 
-         <!-- loginModal -->
-         <jsp:include page="../user/loginModal.jsp" />
-
-         <!-- findIdPwdModal -->
-         <jsp:include page="/WEB-INF/views/user/findIdPwdModal.jsp" />
 
       
