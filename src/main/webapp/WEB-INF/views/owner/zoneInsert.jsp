@@ -76,7 +76,7 @@ pageEncoding="UTF-8"%>
 		const priceValue = document.querySelector("input[name=price]").value;
 
 		$.ajax({
-			url : "http://127.0.0.1:8080/owner/api/zone/insert",
+			url : "http://127.0.0.1:8080/owner/api/zone",
 			method : "post",
 			data : {
 				seasonNo : seasonNoValue,

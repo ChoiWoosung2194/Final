@@ -43,11 +43,11 @@
                                 </li>
 
                                 <li>
-                                    <a href="/campBusiness/campCalender">캠핑장-일정 관리</a>
+                                    <a href="/owner/calender">캠핑장-일정 관리</a>
                                 </li>
 
                                 <li>
-                                    <a href="/campBusiness/listCamp">캠핑존 목록</a>
+                                    <a href="/owner/zone/list">캠핑존 목록</a>
                                 </li>
 
                                 <li>

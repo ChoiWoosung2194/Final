@@ -8,7 +8,7 @@ pageEncoding="UTF-8"%>
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>캠핑장 등록</title>
+		<title>캠핑존 리스트</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 		<meta name="author" content="JSOFT.net">
@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
         <section role="main" class="content-body" style="padding-top: 0px;">
 
         <!---------------------------------------------------------------------------------->
-        <h3><strong>캠핑장 공지사항</strong></h3>
+        <h3><strong>캠핑존 리스트</strong></h3>
 
 			<hr>
     <table border="1">
@@ -65,15 +65,15 @@ pageEncoding="UTF-8"%>
 
          const voList = x;
 
-         const tbody = document.querySelector("tbody")
+         const tbody = document.querySelector("tbody");
          let str = "";
 
          for(let i = 0; i < voList.length ; i++){
                str += "<tr>"
                str += "<td>" + voList[i].name + "</td>";
                str += "<td>" + voList[i].maxPeople +"</td>";
-               str += "<td>" + voList[i].price + "</td>"
-               str += "</tr>"
+               str += "<td>" + voList[i].price + "</td>";
+               str += "</tr>";
          }
          tbody.innerHTML = str;
       },
