@@ -13,7 +13,7 @@ public class CampingVo {
     private String tel;
     private String introduction;
     private String basicInfo;
-    private MultipartFile zoneLayoutImg;
+    private String zoneLayoutImg;
     private String delYn;
     private String area;
     private String campsiteCategory;
