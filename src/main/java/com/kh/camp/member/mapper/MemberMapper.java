@@ -14,6 +14,6 @@ public interface MemberMapper {
 
 
   @Select("SELECT * FROM MEMBER WHERE ID = #{id} AND PWD = #{pwd} AND DEL_YN = 'N'")
-  String login(MemberVo vo);
+  MemberVo login(MemberVo vo);
 
 }
