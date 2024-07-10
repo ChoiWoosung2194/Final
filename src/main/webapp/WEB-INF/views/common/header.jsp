@@ -13,7 +13,7 @@
                      <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
                         class="icon-bar"></span> <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="/">Gamsung</a>
+                  <a class="navbar-brand" href="/">Campot</a>
                </div>
                <!-- 로고 End -->
 
@@ -21,39 +21,6 @@
                <!-- 메뉴 Start -->
                <div class="collapse navbar-collapse" id="custom-collapse">
                   <ul class="nav navbar-nav navbar-right">
-
-                     <!-- 중고경매 Start -->
-                     <li class="dropdown"><a class="dropdown-toggle" href="" data-toggle="dropdown">중고상품</a>
-                        <ul class="dropdown-menu">
-                           <li><a id="addProduct">상품 등록</a></li>
-                           <li><a id="adminProduct">경매 관리자 상품</a></li>
-                           <li><a id="listWait">경매 진행 전 상품</a></li>
-                           <li><a id="listProduct">경매 진행 중 상품</a></li>
-                        </ul>
-                     </li>
-                     <!-- 중고경매 End -->
-
-
-                     <!-- 커뮤니티 Start -->
-                  <li class="">
-                     <a id="commut" class="" data-toggle="">커뮤니티</a>
-                     <!-- <ul class="dropdown-menu">
-                        <li><a href="/community/listPost">커뮤니티</a></li>
-                     </ul> -->
-                  </li>
-                  <!-- 커뮤니티 End -->
-
-                  <!-- 양도양수 Start -->
-                  <li class="dropdown"><a class="dropdown-toggle" href=""
-                        data-toggle="dropdown">예약양도양수</a>
-                     <ul class="dropdown-menu">
-                        <li><a href="/transfer/listTransfer">예약양도 목록</a></li>
-                        <li><a href="/transfer/addTransfer">예약양도 등록 </a></li>
-                        <li><a href="/transfer/listMyTransfer">양도양수 현황 </a></li>
-                     </ul>
-                  </li>
-                  <!-- 양도양수 End -->
-
 
 
                   <!-- 고객센터 Start -->
@@ -149,95 +116,4 @@
          <!-- findIdPwdModal -->
          <jsp:include page="/WEB-INF/views/user/findIdPwdModal.jsp" />
 
-         <script>
-            $(function () {
-               $("#commut").on("click", function(){
-                  if (${empty sessionScope.user }){
-                     Swal.fire({
-                        text: '로그인 후 이용 가능합니다.',
-                        icon: 'warning'
-                     })
-                     return;
-                  } else{
-                     window.location="/community/listPost"; 
-                  }
-               });
-
-               $('#addProduct').on('click', function () {
-                 if (${empty sessionScope.user }){
-                   Swal.fire({
-                      text: '로그인 후 이용 가능합니다.',
-                      icon: 'warning'
-                    })
-                 return;
-               } else if (${ sessionScope.user.role eq 'BUSINESS' }){
-                 Swal.fire({
-                    text: '사업자 회원은 이용 불가능합니다.',
-                    icon: 'warning'
-                  })
-               return;
-            } else if (${ sessionScope.user.auctionSuspension != null }) {
-
-               Swal.fire({
-                  text: '경매 이용 정지되었습니다. 관리자에게 문의하세요.',
-                  icon: 'warning'
-               })
-               return;
-            }
-            window.location = '/auction/addAuctionProduct';
-          });
-   
-            $('#adminProduct').on('click', function () {
-
-               if (${ sessionScope.user.auctionSuspension != null }){
-                 Swal.fire({
-                    text: '경매 이용 정지되었습니다. 관리자에게 문의하세요.',
-                    icon: 'warning'
-                  })
-               return;
-            }
-            window.location = "/auction/listAdminAuctionProduct";
-          });
-   
-            $('#listWait').on('click', function () {
-
-               if (${ sessionScope.user.auctionSuspension != null }){
-                 Swal.fire({
-                    text: '경매 이용 정지되었습니다. 관리자에게 문의하세요.',
-                    icon: 'warning'
-                  })
-               return;
-            }
-            window.location = "/auction/listWaitAuctionProduct";
-          });
-   
-            $('#listProduct').on('click', function () {
-
-               if (${ sessionScope.user.auctionSuspension != null }){
-                 Swal.fire({
-                    text: '경매 이용 정지되었습니다. 관리자에게 문의하세요.',
-                    icon: 'warning'
-                  })
-               return;
-            }
-            window.location = "/auction/listAuctionProduct";
-   
-          });
-   
-            $('#auctionAdd').on('click', function () {
-               window.location = "/auction/listMyAuctionProduct/add?currentPage=1";
-            });
-        });
-   
-         //  $(function () {
-         //     $('#havingPoint').text(comma($('#havingPoint').text()));
-         //  });
-   
-         //  // 금액 "," 추가
-         //  function comma(str) {
-         //     str = String(str);
-         //     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-         //  }
-   
-   
-          </script>
+      

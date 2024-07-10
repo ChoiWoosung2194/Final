@@ -54,7 +54,7 @@ public class CampingController {
 
         zoneLayoutImg.transferTo(targetFile);
 
-//        vo.setZoneLayoutImg(originName);//Todo : string 을 멀티파트파일 타입으로 변경해서 보내기
+        vo.setZoneLayoutImg(originName);//Todo : string 을 멀티파트파일 타입으로 변경해서 보내기
 
         int result = service.insertCamp(vo);
         System.out.println("result = " + result);
