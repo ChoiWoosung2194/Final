@@ -7,12 +7,12 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="widget">
-					<h5 class="widget-title font-alt">About Gamsung</h5>
-					<p>© 2022 AiA AIACADEMY</p>
-					<p>Team : 잘하고있어</p>
+					<h5 class="widget-title font-alt">About CamPot</h5>
+					<p>© 2024 KH ACADEMY</p>
+					<p>Team : camping</p>
 					
-					<p>address : 서울특별시 종로구 종로 69 YMCA 7층</p>
-					<p>tel : 080 - 861 - 0909</p>
+					<p>address : 서울특별시 강남구 테해란로 14길 6 YMCA 6층</p>
+					<p>tel : 070 - 4827 - 0567</p>
 				</div>
 			</div>
 			
@@ -21,23 +21,16 @@
 					<h5 class="widget-title font-alt">Project member</h5>
 					<div class="col-sm-6"style="padding-left: 0;">
 						<ul>
-							<li>박철홍&nbsp;-&nbsp;<a href="#">hulis@naver.com</a></li>
-							<li>[일반회원 캠핑 담당]</li>
-							<li>최인규&nbsp;-&nbsp;<a href="#">skyinsnick@hotmail.com</a></li>
-							<li>[사업자회원 캠핑, 결제 담당]</li>
-							<li>최정아&nbsp;-&nbsp;<a href="#">muse1264@nate.com</a></li>
-							<li>[회원 담당]</li>
+							<li>박진동&nbsp;-&nbsp;<a href="#">dmosier1@naver.com</a></li>
+							<li>[일반회원 캠핑, 결제]</li>
+							<li>최우성&nbsp;-&nbsp;<a href="#">icecool2040@naver.com</a></li>
+							<li>[사업자회원 캠핑]</li>
+							<li>이재화&nbsp;-&nbsp;<a href="#">c2495906@naver.com</a></li>
+							<li>[캠핑리스트, 예약]</li>
 						</ul>
 					</div>
 					<div class="col-sm-6">
-						<ul>
-							<li>황현지&nbsp;-&nbsp;<a href="#">hhj0323@naver.com</a></li>
-							<li>[커뮤니티, 양도양수 담당]</li>
-							<li>오창열&nbsp;-&nbsp;<a href="#">cy950315@naver.com</a></li>
-							<li>[고객센터, 채팅 담당]</li>
-							<li>임준희&nbsp;-&nbsp;<a href="#">yim3370@gmail.com</a></li>
-							<li>[중고상품, 화상채팅 담당]</li>
-						</ul>
+
 					</div>
 				</div>
 			</div>
@@ -51,7 +44,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<p class="copyright font-alt">
-					&copy;2022&nbsp;<a href="https://goai.co.kr/">AiA AIACADEMY</a>, All Rights Reserved
+					&copy;2024&nbsp;<a href="https://goai.co.kr/">KH ACADEMY</a>, All Rights Reserved
 				</p>
 			</div>
 			<div class="col-sm-6">
