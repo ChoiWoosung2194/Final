@@ -5,7 +5,6 @@ import com.kh.camp.member.vo.MemberVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.regex.Pattern;
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -20,7 +19,7 @@ public class MemberService {
     return dao.join(vo);
   }
 
-  public String login(MemberVo vo) {
+  public MemberVo login(MemberVo vo) {
     System.out.println("MemberService.login");
     return dao.login(vo);
   }

@@ -32,21 +32,21 @@ public class MemberController {
     if(result !=1 ){
       throw new RuntimeException("회원가입 실패");
     }
-    return "redirect:/home";
+    return "/member/login";
   }
 
 
   @PostMapping("login")
   public String login(MemberVo vo, HttpSession ss) {
-    String loginResult = service.login(vo);
+    MemberVo loginVo = service.login(vo);
     System.out.println("MemberController.login");
-    if ("success".equals(loginResult)) {
-      ss.setAttribute("member", vo);
-      return "redirect:/home"; // 로그인 성공 시 리다이렉트할 페이지
+    System.out.println(vo);
+    System.out.println("loginVo = " + loginVo);
+    if (loginVo == null) {
+      throw new RuntimeException("로그인 실패");
     }
-    System.out.println("vo = " + vo);
-    System.out.println("loginResult = " + loginResult);
-    return "redirect:/login/error"; // 로그인 실패 시 리다이렉트할 페이지
+    ss.setAttribute("로그인 성공", loginVo);
+    return "redirect:/home/main"; // 로그인 실패 시 리다이렉트할 페이지
   }
 }
 

@@ -118,7 +118,7 @@
 												<label for="add_b_name" class="col-sm-offset-1 col-sm-3 control-label"><strong>휴대폰
 														번호</strong></label>
 												<div class="col-sm-6">
-													<input id="add_b_businessNum" name="businessNum" class="form-control" type="text"
+													<input id="add_b_phone" name="phone" class="form-control" type="text"
 														placeholder="휴대폰 번호를 입력하세요" />
 												</div>
 											</div>
@@ -145,7 +145,7 @@
 												<label for="add_b_phone"
 													class="col-sm-offset-1 col-sm-3 control-label"><strong>우편번호</strong></label>
 												<div class="col-sm-6">
-													<input id="add_b_phone" name="phone" class="form-control" type="text" placeholder="숫자만 입력해주세요"
+													<input id="add_b_zipCode" name="zipCode" class="form-control" type="text" placeholder="숫자만 입력해주세요"
 														maxlength="11" />
 
 												</div>
@@ -157,7 +157,7 @@
 												<label for="add_b_address" class="col-sm-offset-1 col-sm-3 control-label"><strong>
 														주소</strong></label>
 												<div class="col-sm-6">
-													<input id="add_b_addr" name="zipCode" class="form-control" type="text"
+													<input id="add_b_addr" name="address" class="form-control" type="text"
 														placeholder="주소를 입력하세요." />
 												</div>
 											</div>
