@@ -98,10 +98,10 @@
                 <!-- 하단 정보 -->
                 <div class="sidebar-widget widget-stats">
                     <div class="widget-content">
-                        <div><a href="https://goai.co.kr/">© 2022 AiA AIACADEMY</a></div>
-                        <div>Team : 잘하고있어</div>
-                        <div>주소: 서울특별시 종로구 종로 69 YMCA 7층</div>
-                        <div>전화: 080 - 861 - 0909</div>
+                        <div><a href="https://goai.co.kr/">© 2024 KH ACADEMY</a></div>
+                        <div>Team : CAMPOT</div>
+                        <div>주소: 서울특별시 강남구 테해란로 14길 6 YMCA 6층</div>
+                        <div>전화: 070 - 4827 - 0567</div>
                     </div>
                 </div>
             </div>

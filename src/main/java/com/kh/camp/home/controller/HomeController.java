@@ -1,18 +1,28 @@
 package com.kh.camp.home.controller;
 
-
+import com.kh.camp.home.service.HomeService;
+import com.kh.camp.home.vo.HomeVo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
-@RequestMapping("/home")
+@RequestMapping("home")
+@RequiredArgsConstructor
 public class HomeController {
 
-    @GetMapping("/main")
-    public String main() {
+    private final HomeService service;
 
-        return "main";
+    @GetMapping
+    public String home(Model model){
+       List<HomeVo> voList = service.selectCamp();
 
+       model.addAttribute("voList" , voList);
+
+        return "home";
     }
 }
