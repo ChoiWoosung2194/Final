@@ -24,7 +24,7 @@ public class AdminController {
 
     private final AdminService service;
 
-    @GetMapping("adminMain")
+    @GetMapping("main")
     public String test(){
 
         return "admin/adminMain";
@@ -39,20 +39,15 @@ public class AdminController {
     @PostMapping("login")
     public String login(AdminVo vo, HttpSession ss) {
         String loginResult = service.login(vo);
-        System.out.println("AdminController.login");
         if ("success".equals(loginResult)) {
             ss.setAttribute("admin", vo);
         }
-        System.out.println("vo = " + vo);
-        System.out.println("loginResult = " + loginResult);
         return "redirect:/admin/adminMain";
     }
 
     @PostMapping("approveOwner")
     public ModelAndView approveOwner(@ModelAttribute OwnerVo ownerVo, RedirectAttributes redirectAttributes) {
-        System.out.println("AdminController.approveOwner");
-        System.out.println("ownerVo.getNo() = " + ownerVo.getNo());
-        
+
         boolean isApproved = service.approveOwner(ownerVo);
 
         if (isApproved) {
@@ -73,33 +68,8 @@ public class AdminController {
         return "admin/approveOwner";
     }
 
-    //공지사항
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 여기서 부터 상품 관련 백
 
     @GetMapping("productInsert")
     public String showProductInsertForm() {

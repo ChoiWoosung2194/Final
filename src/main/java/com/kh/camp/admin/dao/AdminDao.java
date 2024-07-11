@@ -63,7 +63,6 @@ public class AdminDao {
     }
 
     public String login(AdminVo vo) {
-        System.out.println("AdminDao.login");
         return mapper.login(vo);
     }
 

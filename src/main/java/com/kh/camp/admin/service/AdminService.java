@@ -26,7 +26,6 @@ public class AdminService {
 
     // 관리자 로그인
     public String login(AdminVo vo) {
-        System.out.println("AdminService.login");
         return dao.login(vo);
     }
 
