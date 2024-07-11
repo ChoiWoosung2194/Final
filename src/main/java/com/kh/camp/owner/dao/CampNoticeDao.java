@@ -33,4 +33,8 @@ public class CampNoticeDao {
     public CampNoticeVo noticeDetail(String no) {
         return mapper.noticeDetail(no);
     }
+
+    public int updateHit(String no) {
+        return mapper.updateHit(no);
+    }
 }

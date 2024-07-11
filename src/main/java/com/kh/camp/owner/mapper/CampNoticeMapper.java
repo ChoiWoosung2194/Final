@@ -31,4 +31,7 @@ public interface CampNoticeMapper {
 
     @Select("SELECT * FROM CAMPSITE_NOTICE WHERE NO = #{no}")
     CampNoticeVo noticeDetail(String no);
+
+    @Update("UPDATE CAMPSITE_NOTICE SET HIT = HIT + 1 WHERE NO = #{no}")
+    int updateHit(String no);
 }

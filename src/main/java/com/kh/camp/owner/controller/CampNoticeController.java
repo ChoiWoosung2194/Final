@@ -36,8 +36,8 @@ public class CampNoticeController {
     //캠핑장 공지사항 상세화면 (화면)
     @GetMapping("detail")
     public String noticeDetail(String no, Model model){
+        int result = service.updateHit(no);
         CampNoticeVo vo = service.noticeDetail(no);
-        System.out.println("vo = " + vo);
         model.addAttribute("vo" ,vo);
         return "owner/noticeDetail";
     }

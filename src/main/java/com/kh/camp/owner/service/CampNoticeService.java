@@ -32,4 +32,7 @@ public class CampNoticeService {
     }
 
 
+    public int updateHit(String no) {
+        return dao.updateHit(no);
+    }
 }
