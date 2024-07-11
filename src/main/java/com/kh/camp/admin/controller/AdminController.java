@@ -73,6 +73,34 @@ public class AdminController {
         return "admin/approveOwner";
     }
 
+    //공지사항
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @GetMapping("productInsert")
     public String showProductInsertForm() {
         return "admin/productInsert";

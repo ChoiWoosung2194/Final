@@ -35,7 +35,8 @@ pageEncoding="UTF-8"%>
 
 			<hr>
 
-				제목 ::   <input type="text" name="title" value="${vo.title}"> <input type="text" name="hit" value="${vo.hit}">
+				제목 ::
+				<input type="text" name="title" value="${vo.title}"> <input type="text" name="hit" value="${vo.hit}">
 				<br>
 				<br>
 				내용 ::   
