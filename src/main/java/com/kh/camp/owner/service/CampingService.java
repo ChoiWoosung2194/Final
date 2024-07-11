@@ -4,6 +4,7 @@ package com.kh.camp.owner.service;
 import com.kh.camp.owner.dao.CampingDao;
 import com.kh.camp.owner.vo.CampingVo;
 import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.dayoffVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,5 +56,9 @@ public class CampingService {
 //        }
         return 1;
 
+    }
+
+    public int insertDay(dayoffVo vo) {
+        return dao.insertDay(vo);
     }
 }
