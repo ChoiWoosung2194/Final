@@ -3,6 +3,7 @@ package com.kh.camp.owner.dao;
 import com.kh.camp.owner.mapper.CampingMapper;
 import com.kh.camp.owner.vo.CampingVo;
 import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.dayoffVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ public class CampingDao {
     private final CampingMapper mapper;
 
     public CampingVo getCampByNo(String no) {
-        System.out.println("no = " + no);
+
         return mapper.getCampByNo(no);
     }
 
@@ -37,5 +38,9 @@ public class CampingDao {
 
     public int insertCampImg(ImgVo vo) {
         return mapper.insertCampImg(vo);
+    }
+
+    public int insertDay(dayoffVo vo) {
+        return mapper.insertDay(vo);
     }
 }

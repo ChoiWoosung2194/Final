@@ -5,26 +5,27 @@ import com.kh.camp.owner.vo.OwnerReservationVo;
 import com.kh.camp.owner.vo.OwnerVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("owner")
+@RestController
+@RequestMapping("owner/api/reservation")
 @RequiredArgsConstructor
-public class OwnerReservationController {
+public class OwnerReservationApiController {
 
     private final OwnerReservationService service;
 
     //예약리스트
-    @GetMapping("reservation")
-    public String reservList() {
-        return "owner/reservationList";
-    }
+    @GetMapping
+    public List<OwnerReservationVo> reservList(HttpSession session){
+        OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
+        String no = loginOwnerVo.getNo();
+        List<OwnerReservationVo> reservList = service.reservList(no);
 
+        return reservList;
+    }
 
 }

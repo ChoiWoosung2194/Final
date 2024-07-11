@@ -2,6 +2,7 @@ package com.kh.camp.owner.mapper;
 
 import com.kh.camp.owner.vo.CampingVo;
 import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.dayoffVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -18,7 +19,7 @@ public interface CampingMapper {
     @Insert("INSERT INTO CAMPSITE\n" +
             "(NO,OWNER_NO,NAME, ADDRESS,TEL,INTRODUCTION,BASIC_INFO,ZONE_LAYOUT_IMG,AREA,CAMPSITE_CATEGORY)\n" +
             "VALUES\n" +
-            "(SEQ_CAMPSITE_NO.NEXTVAL,#{ownerNo},#{name},#{address},#{tel},#{introduction},#{basicInfo},#{zoneImg},#{area},#{campsiteCategory} )")
+            "(SEQ_CAMPSITE_NO.NEXTVAL,#{ownerNo},#{name},#{address},#{tel},#{introduction},#{basicInfo},#{zoneLayoutImg},#{area},#{campsiteCategory} )")
     int insertCamp(CampingVo vo);
 
     @Update("UPDATE CAMPSITE SET TEL = #{tel} WHERE OWNER_NO = #{ownerNo}")
@@ -32,4 +33,10 @@ public interface CampingMapper {
 
     @Insert("INSERT INTO CAMP_IMG")
     int insertCampImg(ImgVo vo);
+
+    @Insert("INSERT INTO DAYOFF " +
+            "(NO , OWNER_NO, TITLE, START_DATE, END_DATE) " +
+            "VALUES " +
+            "(SEQ_DAYOFF_NO.NEXTVAL, #{ownerNo} ,#{title} ,#{startDate} , #{endDate}")
+    int insertDay(dayoffVo vo);
 }

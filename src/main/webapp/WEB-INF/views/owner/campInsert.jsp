@@ -57,7 +57,7 @@ pageEncoding="UTF-8"%>
 				<textarea style="width: 400px; height: 300px;" name="introduction" placeholder="캠핑장 소개를 적어주세요"></textarea>
 				<br>
 				<br>
-				<input type="file" name="zoneLayoutImg">
+				<input type="file" name="imgPath">
 				<br>
 				<br>
 				<input type="submit" value="작성하기">

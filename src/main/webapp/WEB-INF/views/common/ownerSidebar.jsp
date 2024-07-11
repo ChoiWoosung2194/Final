@@ -84,7 +84,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="/campBusiness/listCamp">예약 확인하기</a>
+                                    <a href="/owner/reservation">예약 확인하기</a>
                                 </li>
                                 <li>
                                     <a href="/campBusiness/listMainSite">내 수익 보기</a>

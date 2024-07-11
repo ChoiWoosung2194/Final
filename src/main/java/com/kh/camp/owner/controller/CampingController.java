@@ -3,8 +3,8 @@ package com.kh.camp.owner.controller;
 
 import com.kh.camp.owner.service.CampingService;
 import com.kh.camp.owner.vo.CampingVo;
-import com.kh.camp.owner.vo.ImgVo;
 import com.kh.camp.owner.vo.OwnerVo;
+import com.kh.camp.owner.vo.dayoffVo;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -35,29 +35,22 @@ public class CampingController {
 
     //내 캠핑장 등록하기
     @PostMapping("camp/insert")
-    public String insertCamp(HttpSession session, CampingVo vo , MultipartFile zoneLayoutImg) throws Exception {
+    public String insertCamp(HttpSession session, CampingVo vo) throws Exception {
         OwnerVo ownerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String ownerNo = ownerVo.getNo();
         vo.setOwnerNo(ownerNo);
 
+        MultipartFile imgPath = vo.getImgPath();
+        String originName = imgPath.getOriginalFilename();
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+        imgPath.transferTo(targetFile);
 
 
-        String originName = zoneLayoutImg.getOriginalFilename();
-        String targetPath ="D:/campot/src/main/webapp/resources/images/" + originName;
-        File targetFile = new File(targetPath);
 
-        // 파일 저장 경로의 디렉토리 존재 여부 확인 및 생성
-//        if (!targetFile.getParentFile().exists()) {
-//            targetFile.getParentFile().mkdirs();
-//        }
-
-
-        zoneLayoutImg.transferTo(targetFile);
-
-        vo.setZoneLayoutImg(originName);//Todo : string 을 멀티파트파일 타입으로 변경해서 보내기
+        vo.setZoneLayoutImg(originName);
 
         int result = service.insertCamp(vo);
-        System.out.println("result = " + result);
+
         if(result != 1){
             throw new Exception("등록에 실패하였습니다.");
         }
@@ -72,7 +65,7 @@ public class CampingController {
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String no = loginOwnerVo.getNo();
         CampingVo voList = service.getCampByNo(no);
-        System.out.println("voList = " + voList);
+
         model.addAttribute("voList" , voList);
         return "owner/camping";
     }
@@ -105,9 +98,9 @@ public class CampingController {
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String no = loginOwnerVo.getNo();
 
-        System.out.println("name = " + name);
+
         int result = service.updateFacility(no,name);
-        System.out.println("result = " + result);
+
 
         if(result != 1){
             return ResponseEntity.internalServerError().body("등록에 실패하였습니다.");
@@ -122,14 +115,25 @@ public class CampingController {
         return "/owner/calender";
     }
 
+    //일정관리(캘린더)
+    @PostMapping("calender")
+    public int insertDay(dayoffVo vo , HttpSession session){
+        OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
+        String no = loginOwnerVo.getNo();
+        vo.setOwnerNo(no);
+        int result = service.insertDay(vo);
 
-    //캠핑장 사진 업로드
-    @PostMapping("campImg")
-    public String insertCampImg(String campName , ImgVo vo){
-        int result = service.insertCampImg(campName , vo);
-
-        return "redirect:/owner/main";
+        return result;
+        }
     }
 
 
-}
+    //캠핑장 사진 업로드
+//    @PostMapping("campImg")
+//    public String insertCampImg(String campName , ImgVo vo){
+//        int result = service.insertCampImg(campName , vo);
+//
+//        return "redirect:/owner/main";
+//    }
+
+

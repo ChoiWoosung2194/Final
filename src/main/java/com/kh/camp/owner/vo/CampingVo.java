@@ -17,7 +17,8 @@ public class CampingVo {
     private String delYn;
     private String area;
     private String campsiteCategory;
-    private String zoneImg;
+    private MultipartFile imgPath;
+
 
 
 
