@@ -11,7 +11,7 @@
     Document Title
     =============================================
     -->
-         <title>캠팟의 공지사항</title>
+         <title>캠팟의 FAQ</title>
 
          <jsp:include page="/resources/commonLib.jsp" />
 
@@ -137,7 +137,7 @@
       <script>
 
          $.ajax({
-            url : "http://127.0.0.1:8080/notice/api ",
+            url : "http://127.0.0.1:8080/faq/api ",
             method : "get",
             data : {},
             success : (x) => {
