@@ -14,6 +14,7 @@ public class OwnerVo {
     private String phone;
     private String email;
     private String address;
+    private String detailAddress;
     private String zipCode;
     private String businessNum;
     private String joinApprovalYn;
