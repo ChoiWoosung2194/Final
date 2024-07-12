@@ -45,7 +45,7 @@ public interface AdminMapper {
     void deleteProductImg();
 
     @Select("SELECT * FROM ADMIN WHERE ID = #{id} AND PWD = #{pwd}")
-    String login(AdminVo vo);
+    AdminVo login(AdminVo vo);
 
     @Select("SELECT * FROM PRODUCT WHERE NO = #{no}")
     ProductVo getProductByNo(ProductVo vo);

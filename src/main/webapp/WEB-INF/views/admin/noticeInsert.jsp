@@ -68,8 +68,8 @@ pageEncoding="UTF-8"%>
 			},
 			success : function(x){
 				alert(x);
+                location.href="/admin/main";
 
-				location.href="/admin/main";
 			},
 			error : function(error){
 					console.log(error);

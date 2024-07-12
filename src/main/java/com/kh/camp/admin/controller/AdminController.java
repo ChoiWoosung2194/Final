@@ -38,11 +38,16 @@ public class AdminController {
 
     @PostMapping("login")
     public String login(AdminVo vo, HttpSession ss) {
-        String loginResult = service.login(vo);
-        if ("success".equals(loginResult)) {
-            ss.setAttribute("admin", vo);
+        AdminVo loginAdminVo = service.login(vo);
+
+        if(loginAdminVo != null){
+            ss.setAttribute("loginAdminVo" , loginAdminVo);
+            return "redirect:/admin/main";
+        }else {
+            throw new RuntimeException();
         }
-        return "redirect:/admin/adminMain";
+
+
     }
 
     @PostMapping("approveOwner")
@@ -52,7 +57,7 @@ public class AdminController {
 
         if (isApproved) {
             // 성공할 경우 adminMain으로 리다이렉트
-            return new ModelAndView("redirect:/admin/adminMain");
+            return new ModelAndView("redirect:/admin/main");
         } else {
             // 실패할 경우 다시 approveOwner.jsp로 리다이렉트하고 에러 메시지 전달
             redirectAttributes.addFlashAttribute("error", "Approval failed. Please try again.");

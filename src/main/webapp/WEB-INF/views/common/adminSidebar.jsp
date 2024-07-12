@@ -62,7 +62,7 @@
                                     <a href="/admin/faq/insert">FAQ 등록</a>
                                 </li>
                                 <li>
-                                    <a href="/owner/faq/list">FAQ 목록</a>
+                                    <a href="/admin/faq/list">FAQ 목록</a>
                                 </li>
                             </ul>
                         </li>

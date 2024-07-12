@@ -25,7 +25,7 @@ public class AdminService {
     private static final Logger logger = LoggerFactory.getLogger(AdminService.class);
 
     // 관리자 로그인
-    public String login(AdminVo vo) {
+    public AdminVo login(AdminVo vo) {
         return dao.login(vo);
     }
 

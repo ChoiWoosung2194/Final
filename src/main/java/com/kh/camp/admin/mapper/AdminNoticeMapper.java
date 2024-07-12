@@ -14,7 +14,7 @@ public interface AdminNoticeMapper {
     @Select("SELECT * FROM NOTICE WHERE DEL_YN = 'N'")
     List<AdminNoticeVo> noticeList();
 
-    @Insert("INSERT INTO (NO, WRITER, TITLE, CONTENT) VALUES (SEQ_NOTICE_NO.NEXTVAL , #{writer} ,#{title} ,#{content})")
+    @Insert("INSERT INTO NOTICE (NO, WRITER, TITLE, CONTENT) VALUES (SEQ_NOTICE_NO.NEXTVAL , #{writer} ,#{title} ,#{content})")
     int noticeInsert(AdminNoticeVo vo);
 
     @Select("SELECT * FROM NOTICE WHERE NO = #{no}")

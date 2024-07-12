@@ -39,13 +39,11 @@ public class MemberController {
   @PostMapping("login")
   public String login(MemberVo vo, HttpSession ss) {
     MemberVo loginVo = service.login(vo);
-    System.out.println("MemberController.login");
-    System.out.println(vo);
-    System.out.println("loginVo = " + loginVo);
+
     if (loginVo == null) {
       throw new RuntimeException("로그인 실패");
     }
-    ss.setAttribute("로그인 성공", loginVo);
+    ss.setAttribute("loginVo", loginVo);
     return "redirect:/home"; // 로그인 실패 시 리다이렉트할 페이지
   }
 }

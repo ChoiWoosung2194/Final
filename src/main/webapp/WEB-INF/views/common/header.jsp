@@ -27,8 +27,8 @@
                   <li class="dropdown"><a class="dropdown-toggle" href="/servicecenter/home"
                         data-toggle="dropdown">고객센터</a>
                      <ul class="dropdown-menu">
-                        <li><a href="/servicecenter/listNotice">공지사항</a></li>
-                        <li><a href="/servicecenter/listQna"> Q&A </a></li>
+                        <li><a href="/notice/list">공지사항</a></li>
+                        <li><a href="/faq/list"> FAQ </a></li>
                      </ul>
                   </li>
                   <!-- 고객센터 End -->
@@ -97,11 +97,16 @@
 
                      <!-- 로그인/로그아웃 Start -->
                      <li>
-
-                           <a class="modal-basic" href="/member/login" id="header-login"><button
-                                 class="btn btn-border-w btn-round btn-xs main-login-btn"
-                                 type="button">LOGIN</button></a>
-
+                           <c:if test="${loginVo != null}">
+                               <a class="modal-basic" href="/" id="header-login"><button
+                                     class="btn btn-border-w btn-round btn-xs main-login-btn"
+                                     type="button">마이페이지</button></a>
+                           </c:if>
+                           <c:if test="${loginVo == null}">
+                              <a class="modal-basic" href="/member/login" id="header-login"><button
+                                    class="btn btn-border-w btn-round btn-xs main-login-btn"
+                                    type="button">LOGIN</button></a>
+                           </c:if>
                      </li>
                      <!-- 로그인/로그아웃 End -->
 

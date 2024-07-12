@@ -62,7 +62,7 @@ public class AdminDao {
         mapper.deleteProductImg();
     }
 
-    public String login(AdminVo vo) {
+    public AdminVo login(AdminVo vo) {
         return mapper.login(vo);
     }
 
