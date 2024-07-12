@@ -1,6 +1,6 @@
 package com.kh.camp.owner.controller;
 
-import com.kh.camp.owner.service.ZoneService;
+import com.kh.camp.owner.service.OwnerZoneService;
 import com.kh.camp.owner.vo.ZoneImgVo;
 import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("owner")
 @RequiredArgsConstructor
-public class ZoneController {
+public class OwnerZoneController {
 
-    private final ZoneService service;
+    private final OwnerZoneService service;
 
     //캠핑존 리스트(화면)
     @GetMapping("zone/list")

@@ -1,6 +1,6 @@
 package com.kh.camp.owner.service;
 
-import com.kh.camp.owner.dao.ZoneDao;
+import com.kh.camp.owner.dao.OwnerZoneDao;
 import com.kh.camp.owner.vo.ZoneImgVo;
 import com.kh.camp.owner.vo.ZoneVo;
 import lombok.RequiredArgsConstructor;
@@ -12,9 +12,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class ZoneService {
+public class OwnerZoneService {
 
-    private final ZoneDao dao;
+    private final OwnerZoneDao dao;
 
     public int zoneInsert(ZoneVo vo) {
         return dao.zoneInsert(vo);
