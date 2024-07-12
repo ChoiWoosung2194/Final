@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface ZoneMapper {
+public interface OwnerZoneMapper {
 
     @Insert("INSERT INTO ZONE\n" +
             "(NO, OWNER_NO, SEASON_NO, NAME, MAX_PEOPLE ,PRICE)\n" +

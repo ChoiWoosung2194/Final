@@ -1,6 +1,6 @@
 package com.kh.camp.owner.dao;
 
-import com.kh.camp.owner.mapper.ZoneMapper;
+import com.kh.camp.owner.mapper.OwnerZoneMapper;
 import com.kh.camp.owner.vo.ZoneImgVo;
 import com.kh.camp.owner.vo.ZoneVo;
 import lombok.RequiredArgsConstructor;
@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class ZoneDao {
+public class OwnerZoneDao {
 
-    private final ZoneMapper mapper;
+    private final OwnerZoneMapper mapper;
 
     public int zoneInsert(ZoneVo vo) {
         return mapper.zoneInsert(vo);

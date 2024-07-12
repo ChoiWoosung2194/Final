@@ -1,6 +1,6 @@
 package com.kh.camp.owner.controller;
 
-import com.kh.camp.owner.service.ZoneService;
+import com.kh.camp.owner.service.OwnerZoneService;
 import com.kh.camp.owner.vo.OwnerVo;
 import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ZoneApiController {
 
-    private final ZoneService service;
+    private final OwnerZoneService service;
 
     //캠핑존 등록(처리)
     @PostMapping

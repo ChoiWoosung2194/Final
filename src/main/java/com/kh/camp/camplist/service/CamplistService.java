@@ -21,4 +21,6 @@ public class CamplistService {
     public ResultPage getResultPage(int currentPage, String sortCondition, String searchKeyword) {
         return camplistDao.findResultPage(currentPage, sortCondition, searchKeyword);
     }
+
+
 }
