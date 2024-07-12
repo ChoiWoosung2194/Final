@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface MemberMapper {
 
-  @Insert("INSERT INTO MEMBER ( NO,ID,PWD,NICK,ADDRESS,ZIP_CODE,PHONE,NAME,EMAIL)VALUES(SEQ_MEMBER_NO.NEXTVAL,#{id},#{pwd},#{nick},#{address},#{zipCode},#{phone},#{name},#{email})")
+  @Insert("INSERT INTO MEMBER ( NO,ID,PWD,NICK,ADDRESS,DETAIL_ADDRESS,ZIP_CODE,PHONE,NAME,EMAIL)VALUES(SEQ_MEMBER_NO.NEXTVAL,#{id},#{pwd},#{nick},#{address},#{detailAddress},#{zipCode},#{phone},#{name},#{email})")
   int join(MemberVo vo);
 
 

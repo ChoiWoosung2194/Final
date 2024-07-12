@@ -10,6 +10,7 @@ public class MemberVo {
   private String pwd2;
   private String nick;
   private String address;
+  private String detailAddress;
   private String zipCode;
   private String phone;
   private String name;

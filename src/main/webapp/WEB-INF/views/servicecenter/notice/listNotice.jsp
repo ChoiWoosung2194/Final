@@ -1,62 +1,91 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html>
 
-<div class="table-list-padding">
-  <div class="col-xs-12">
-    <div class="row">
-      <h4 class="col-sm-7 mb-0 font-jua main-color"style="font-size: 34px;font-weight:400">공지 사항</h4>
-      <div class="col-sm-5 mb-sm-0 search-contents" style="margin-top: 15px;">
-        <div class="row">
-          <form role="form" class="notice-search">
-            <div class="col-sm-4">
-              <select class="form-control" name="searchCondition">
-                <option value="0" ${ ! empty wrapper.search.searchCondition && wrapper.search.searchCondition==0 ? "selected" : "" }>제목+내용</option>
-                <option value="1" ${ ! empty wrapper.search.searchCondition && wrapper.search.searchCondition==1 ? "selected" : "" }>제목</option>
-                <option value="2" ${ ! empty wrapper.search.searchCondition && wrapper.search.searchCondition==2 ? "selected" : "" }>내용</option>
-              </select>
-            </div>
-            <div class="col-sm-8">
-              <div class="search-box">
-                <input class="form-control" type="text" placeholder="Search..." name="searchKeyword" value="${wrapper.search.searchKeyword}">
-                <button class="search-btn notice-search-btn" type="submit"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-            <input type="hidden" id="currentPage" name="currentPage" value="${resultPage.currentPage}"/>
-          </form>
-        </div>
-      </div>
-    </div>
-    <hr class="divider-w mt-10 mb-20">
-    <div class="notice-list">
-      <ul>
-        <!-- list Start -->
-        <c:forEach var ="notice" items="${wrapper.notices}">
-        <li>
-          <div class="row">
-            <div class="col-sm-2 notice-no">${notice.noticeNo}</div>
-            <div class="col-sm-6 notice-title">${notice.noticeTitle}</div>
-            <div class="col-sm-2 notice-view-count">
-              <div> 
-                <i class="fa fa-fw"></i> 
-                ${notice.viewCount}
-              </div>
-              <div>
-                <c:if test="${!empty notice.noticeFile1 or !empty notice.noticeFile2 or !empty notice.noticeFile3 or !empty notice.noticeFile4 or !empty notice.noticeFile5}">
-                  <i class="bi bi-file-earmark-medical"></i>
-                </c:if>
-              </div>
-            </div>
-            <div class="col-sm-2 notice-reg-date">${notice.regDate}</div>
-          </div>
-        </li>
-      </c:forEach>
-        
-      </ul>
-    </div>
-  </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+            integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <jsp:include page="../../common/pageNavigator.jsp"/>
-  
 
-</div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <link rel="stylesheet" href="/app/resources/css/service/service-notice.css">
+        <script defer src="/resources/css/notice.css"></script>
+
+
+
+        <script>
+        	<c:if test="${not empty alertMsg}">
+        	alert("${alertMsg}");
+        	</c:if>
+        </script>
+
+        <c:remove var="alertMsg" scope="session" />
+    </head>
+
+    <body>
+
+       <jsp:include page="/WEB-INF/views/common/header.jsp" />
+
+        <main>
+            <div class="side"></div>
+            <div id="main">
+                <div id="top">
+                    <span>공지사항</span>
+                    <div id="line"></div>
+                </div>
+                <div id="side-category">
+
+                        <div><a href="/app/board/noticelist" class="ca">공지사항</a></div>
+                        <div><a href="/app/board/noticelist" class="ca">FAQ</a></div>
+
+                        <a id="ca" href="">
+                            <img src="" alt="">
+                        </a>
+                </div>
+                <div id="main-list">
+                  <div id="search">
+                    <span id="title">공지사항</span>
+                    <span id="content">Four's Movie의 중요한 이슈 및 여러가지 소식들을 확인하실 수 있습니다</span>
+                  </div>
+                  <div id="list">
+                    <table class="list">
+                      <thead>
+                          <tr>
+                              <th>번호</th>
+                              <th>제목</th>
+                              <th>날짜</th>
+                              <th>조회수</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <c:forEach items="${voList}" var="vo">
+                              <tr>
+                                  <td>${vo.no}</td>
+                                  <td><a href="/app/board/notice/detail?no=${vo.no}"> ${vo.title}</a></td>
+                                  <td>${vo.uploadDate}</td>
+                                  <td>${vo.views}</td>
+                              </tr>
+                          </c:forEach>
+                      </tbody>
+                  </table>
+
+                  </div>
+                </div>
+            <div class="side"></div>
+            </div>
+        </main>
+
+	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+    </body>
+
+    </html>

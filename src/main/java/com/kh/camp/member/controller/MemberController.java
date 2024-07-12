@@ -46,7 +46,7 @@ public class MemberController {
       throw new RuntimeException("로그인 실패");
     }
     ss.setAttribute("로그인 성공", loginVo);
-    return "redirect:/home/main"; // 로그인 실패 시 리다이렉트할 페이지
+    return "redirect:/home"; // 로그인 실패 시 리다이렉트할 페이지
   }
 }
 
