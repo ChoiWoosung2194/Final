@@ -11,7 +11,6 @@
     <!-- Document Title -->
     <title>ListCamp</title>
 
-    <jsp:include page="../../resources/commonLib.jsp"/>
     <style type="text/css">
         .camp_name_sub {
             overflow: hidden;
@@ -22,8 +21,8 @@
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>
-    <jsp:include page="/view/common/header.jsp"/>
-    <jsp:include page="/view/camp/campSearch.jsp"/>
+    <jsp:include page="/views/common/header.jsp"/>
+ <%   <jsp:include page="/views/camp/campSearch.jsp"/>   >%
 
     <div class="container" style="padding-top: 30px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto">
         <div>
@@ -83,7 +82,7 @@
                         <!-- 캠핑장 이미지 -->
                         <div class="col-lg-3">
                             <div class="image" name="campNo" data-campNo="${camp.campNo}" style="cursor: pointer; width: 200px; height: 150px; border-radius: 10px; display: flex; justify-content: center; align-items: center">
-                                <img src="/uploadfiles/campimg/campbusiness/camp/${camp.campImg1}" onerror="this.src='/uploadfiles/campimg/campbusiness/camp/no_image.jpg'" alt="캠핑장 대표이미지">
+                               <% 캠핑장 이미지 들어가야함 <img src="" alt="캠핑장 대표이미지"> %>
                             </div>
                         </div>
                         <!-- 캠핑장 정보 -->
@@ -119,10 +118,9 @@
         <jsp:include page="../common/pageNavigator.jsp"/>
     </div>
 
-    <jsp:include page="../../view/common/footer.jsp"/>
+    <jsp:include page="../../views/common/footer.jsp"/>
 
-    <script src="../../resources/lib/modals/examples.modals.js"></script>
-    <script src="../../resources/js/campSearch.js"></script>
+   <% <script src="../../resources/js/campSearch.js"></script>  %>
 
     <script type="text/javascript">
         window.onload = function() {

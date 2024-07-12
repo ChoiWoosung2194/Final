@@ -12,8 +12,8 @@ public interface CamplistMapper {
 
     @Select({
             "<script>",
-            "SELECT * FROM campsite",
-            "WHERE del_yn = 'N'",
+            "SELECT * FROM CAMPSITE",
+            "WHERE DEL_YN = 'N'",
             "<if test='searchKeyword != null and !searchKeyword.isEmpty()'>",
             "AND name LIKE CONCAT('%', #{searchKeyword}, '%')",
             "</if>",
@@ -34,10 +34,10 @@ public interface CamplistMapper {
     @Select({
             "<script>",
             "SELECT COUNT(*)",
-            "FROM campsite",
-            "WHERE del_yn = 'N'",
+            "FROM CAMPSITE",
+            "WHERE DEL_YN = 'N'",
             "<if test='searchKeyword != null and !searchKeyword.isEmpty()'>",
-            "AND name LIKE CONCAT('%', #{searchKeyword}, '%')",
+            "AND NAME LIKE CONCAT('%', #{searchKeyword}, '%')",
             "</if>",
             "</script>"
     })
