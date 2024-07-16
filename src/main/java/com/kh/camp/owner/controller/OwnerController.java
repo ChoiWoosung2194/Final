@@ -39,8 +39,8 @@ public class OwnerController {
         
         if(loginOwnerVo != null){
             session.setAttribute("loginOwnerVo" , loginOwnerVo);
-            session.setAttribute("alertMsg", vo.getName() + "님 환영합니다 ~~!!");
-            return "owner/main";
+            session.setAttribute("alertMsg", vo.getName() + "님 승인 후 이용 가능합니다. ~~!!");
+            return "redirect:/home";
         }else{
             throw new RuntimeException();
         }
@@ -50,6 +50,7 @@ public class OwnerController {
     public String join(){
         return "owner/join";
     }
+
     //회원가입
     @PostMapping("join")
     public String join(OwnerVo vo) throws Exception {

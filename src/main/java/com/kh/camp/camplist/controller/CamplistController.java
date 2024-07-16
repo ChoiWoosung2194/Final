@@ -31,6 +31,6 @@ public class CamplistController {
         model.addAttribute("search", searchKeyword);
         model.addAttribute("resultPage", resultPage);
 
-        return "view/camp/listCamp";
+        return "camplist";
     }
 }
