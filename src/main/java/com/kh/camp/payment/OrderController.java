@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/order")
+@RequestMapping("order")
 public class OrderController {
 
     private final KakaoPayService kakaoPayService;
