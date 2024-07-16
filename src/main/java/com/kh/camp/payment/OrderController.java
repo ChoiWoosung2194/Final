@@ -47,16 +47,16 @@ public class OrderController {
         // 카카오 결제 요청하기
         ApproveResponse approveResponse = kakaoPayService.payApprove(tid, pgToken);
 
-        return "redirect:/payment/completed";
+        return "payment/completed";
     }
     @GetMapping("/pay/cancel")
     public String payCancel(@RequestParam("pg_token") String pgToken, HttpSession SessionUtiles){
 
-        return "redirect:/payment/cancel";
+        return "payment/cancel";
 
     }
     @GetMapping("/pay/fail")
     public String payFail(){
-        return "redirect:/payment/fail";
+        return "payment/fail";
     }
 }
