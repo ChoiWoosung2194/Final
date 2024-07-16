@@ -3,7 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="ko" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +12,91 @@
     <title>ListCamp</title>
 
     <style type="text/css">
+        * {
+            font-family: 'Noto Sans KR', sans-serif !important;
+        }
+
+        .container {
+            padding: 20px !important;
+            margin: 0 auto !important;
+        }
+
+        .row {
+            margin-bottom: 20px !important;
+        }
+
+        .image {
+            cursor: pointer !important;
+            width: 200px !important;
+            height: 150px !important;
+            border-radius: 10px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            border: 1px solid #ddd !important;
+        }
+
         .camp_name_sub {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            color: #333064 !important;
+        }
+
+        .col-xs-4, .col-xs-8 {
+            margin-top: 5px !important;
+        }
+
+        .col-xs-2 {
+            margin-top: 15px !important;
+        }
+
+        hr {
+            border: 0 !important;
+            height: 1px !important;
+            background: #ccc !important;
+            margin: 20px 0 !important;
+        }
+
+        .fa-hover {
+            text-align: right !important;
+        }
+
+        .fa-hover i {
+            cursor: pointer !important;
+            margin-left: 10px !important;
+        }
+
+        .substring, .phone_format {
+            font-size: 14px !important;
+            color: #555 !important;
+        }
+
+        .phone_format {
+            margin-top: 10px !important;
+        }
+
+        @media (max-width: 768px) {
+            .col-lg-9, .col-lg-3 {
+                width: 100% !important;
+                flex: 100% !important;
+            }
+
+            .fa-hover {
+                text-align: left !important;
+                margin-top: 10px !important;
+            }
         }
     </style>
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>
     <jsp:include page="/views/common/header.jsp"/>
- <%   <jsp:include page="/views/camp/campSearch.jsp"/>   >%
+    <jsp:include page="/views/camp/campSearch.jsp"/>
 
-    <div class="container" style="padding-top: 30px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto">
+    <div class="container">
         <div>
             <div class="row">
                 <div class="col-xs-9">전체
@@ -32,11 +104,11 @@
                 </div>
                 <div class="fa-hover col-xs-3">
                     조회수
-                    <i class="fa fa-arrow-down" id="view" name="sortCondition" style="cursor: pointer;"></i>
+                    <i class="fa fa-arrow-down" id="view" name="sortCondition"></i>
                     평점
-                    <i class="fa fa-arrow-down" id="rating" name="sortCondition" style="cursor: pointer;"></i>
+                    <i class="fa fa-arrow-down" id="rating" name="sortCondition"></i>
                     등록일
-                    <i class="fa fa-arrow-down" id="regdate" name="sortCondition" style="cursor: pointer;"></i>
+                    <i class="fa fa-arrow-down" id="regdate" name="sortCondition"></i>
                 </div>
             </div>
 
@@ -81,14 +153,15 @@
                     <div class="row">
                         <!-- 캠핑장 이미지 -->
                         <div class="col-lg-3">
-                            <div class="image" name="campNo" data-campNo="${camp.campNo}" style="cursor: pointer; width: 200px; height: 150px; border-radius: 10px; display: flex; justify-content: center; align-items: center">
-                               <% 캠핑장 이미지 들어가야함 <img src="" alt="캠핑장 대표이미지"> %>
+                            <div class="image" name="campNo" data-campNo="${camp.campNo}">
+                               <!-- 캠핑장 이미지 들어가야함 -->
+                               <img src="" alt="캠핑장 대표이미지" style="max-width: 100%; max-height: 100%; border-radius: 10px;">
                             </div>
                         </div>
                         <!-- 캠핑장 정보 -->
                         <div class="col-lg-9">
                             <div class="row">
-                                <div class="col-xs-4 camp_name_sub" style="font-size: large; font-weight: bold ">${camp.user.campName}&nbsp;</div>
+                                <div class="col-xs-4 camp_name_sub">${camp.user.campName}&nbsp;</div>
                                 <div class="col-xs-4" style="margin-top: 3px;"> 등록일 : ${camp.campRegDate}</div>
                             </div>
                             <div class="row">
@@ -115,12 +188,12 @@
     </div>
     <!-- PageNavigation -->
     <div class="row">
-        <jsp:include page="../common/pageNavigator.jsp"/>
+
     </div>
 
     <jsp:include page="../../views/common/footer.jsp"/>
 
-   <% <script src="../../resources/js/campSearch.js"></script>  %>
+    <script src="../../resources/js/campSearch.js"></script>
 
     <script type="text/javascript">
         window.onload = function() {
