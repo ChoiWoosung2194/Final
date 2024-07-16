@@ -1,9 +1,12 @@
 package com.kh.camp.serviceCenter.controller;
 
 import com.kh.camp.serviceCenter.service.NoticeService;
+import com.kh.camp.serviceCenter.vo.NoticeVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -16,5 +19,15 @@ public class NoticeController {
     @GetMapping("list")
     public String noticeList(){
         return "servicecenter/notice/listNotice";
+    }
+
+
+
+    @GetMapping("detail")
+    public String noticeDetail(String no, Model model){
+        int result = service.updateHit(no);
+        NoticeVo vo = service.noticeDetail(no);
+        model.addAttribute("vo", vo);
+        return "servicecenter/notice/detailNotice";
     }
 }

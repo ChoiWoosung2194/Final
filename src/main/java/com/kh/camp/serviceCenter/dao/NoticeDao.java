@@ -16,4 +16,12 @@ public class NoticeDao {
     public List<NoticeVo> noticeList() {
         return mapper.noticeList();
     }
+
+    public NoticeVo noticeDetail(String no) {
+        return mapper.noticeDetail(no);
+    }
+
+    public int updateHit(String no) {
+        return mapper.updateHit(no);
+    }
 }

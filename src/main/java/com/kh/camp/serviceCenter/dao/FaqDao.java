@@ -16,4 +16,12 @@ public class FaqDao {
     public List<FaqVo> faqList() {
         return mapper.faqList();
     }
+
+    public FaqVo faqDetail(String no) {
+        return mapper.faqDetail(no);
+    }
+
+    public int updateHit(String no) {
+        return mapper.updateHit(no);
+    }
 }
