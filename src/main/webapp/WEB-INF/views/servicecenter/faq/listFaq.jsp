@@ -77,7 +77,7 @@
 
             <div class="main sc-main">
                <section class="module bg-dark-30 about-page-header"
-                  data-background="../../uploadfiles/transfer/list.jpg" style="padding-top: 370px;
+                  data-background="/resources/images/servicecenter.png" style="padding-top: 370px;
     padding-bottom: 390px;">
                   <div class="container">
                      <div class="row">
@@ -149,8 +149,8 @@
 
                for(let i = 0; i < voList.length ; i++){
                      str += "<tr>"
-                     str += "<td><a href='/admin/faq/detail?no=" + voList[i].no + "'>" + voList[i].no + "</a></td>";
-                     str += "<td><a href='/admin/faq/detail?no=" + voList[i].no + "'>" + voList[i].title + "</a></td>";
+                     str += "<td><a href='/faq/detail?no=" + voList[i].no + "'>" + voList[i].no + "</a></td>";
+                     str += "<td><a href='/faq/detail?no=" + voList[i].no + "'>" + voList[i].title + "</a></td>";
                      str += "<td>" + voList[i].writer + "</td>"
                      str += "<td>" + voList[i].hit + "</td>"
                      str += "<td>" + voList[i].createDate + "</td>"

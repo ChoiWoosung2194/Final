@@ -22,4 +22,6 @@ public class FaqApiController {
 
         return voList;
     }
+
+
 }

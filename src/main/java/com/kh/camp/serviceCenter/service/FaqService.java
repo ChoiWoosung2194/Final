@@ -16,4 +16,12 @@ public class FaqService {
     public List<FaqVo> faqList() {
         return dao.faqList();
     }
+
+    public FaqVo faqDetail(String no) {
+        return dao.faqDetail(no);
+    }
+
+    public int updateHit(String no) {
+        return dao.updateHit(no);
+    }
 }
