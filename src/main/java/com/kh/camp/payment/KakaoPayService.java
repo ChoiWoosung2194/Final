@@ -68,8 +68,8 @@ public class KakaoPayService {
     // 카카오페이 측에 요청 시 헤더부에 필요한 값
     private HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "카카오페이 개발자센터에서 발급받은 Secret key(dev) 입력");
-        headers.set("Content-type", "application/json");
+        headers.set("Authorization", "DEV54D3B5BCEB90CD35928AEE94828039D03106C");
+        headers.set("Content-type", "application/json;charset=utf-8");
 
         return headers;
     }
