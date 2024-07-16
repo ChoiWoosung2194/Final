@@ -38,10 +38,10 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="/admin/notice/insert">일반회원 관리</a>
+                                    <a href="/admin/member">일반회원 관리</a>
                                 </li>
                                 <li>
-                                    <a href="/owner/notice/list">사업자회원 관리</a>
+                                    <a href="/owner/owner">사업자회원 관리</a>
                                 </li>
 
                             </ul>
