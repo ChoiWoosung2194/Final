@@ -22,4 +22,20 @@ public class OwnerDao {
     public int pwdEdit(OwnerVo vo) {
         return mapper.pwdEdit(vo);
     }
+
+    public OwnerVo editOwner(String no) {
+        return mapper.editOwner(no);
+    }
+
+    public int editPwd(OwnerVo vo) {
+        return mapper.editPwd(vo);
+    }
+
+    public int editNick(OwnerVo vo) {
+        return mapper.editNick(vo);
+    }
+
+    public int editPhone(OwnerVo vo) {
+        return mapper.editPhone(vo);
+    }
 }

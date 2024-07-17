@@ -20,4 +20,16 @@ public interface OwnerMapper {
 
     @Update("UPDATE OWNER SET PWD = #{pwd} WHERE NO = #{no}")
     int pwdEdit(OwnerVo vo);
+
+    @Select("SELECT * FROM OWNER WHERE NO = #{no}")
+    OwnerVo editOwner(String no);
+
+    @Update("UPDATE OWNER SET PWD = #{pwd} WHERE NO = #{no}")
+    int editPwd(OwnerVo vo);
+
+    @Update("UPDATE OWNER SET NICK = #{nick} WHERE NO = #{no}")
+    int editNick(OwnerVo vo);
+
+    @Update("UPDATE OWNER SET PHONE = #{phone} WHERE NO = #{no}")
+    int editPhone(OwnerVo vo);
 }

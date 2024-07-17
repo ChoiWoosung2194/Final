@@ -98,7 +98,7 @@
                      <!-- 로그인/로그아웃 Start -->
                      <li>
                            <c:if test="${loginVo != null}">
-                               <a class="modal-basic" href="/" id="header-login"><button
+                               <a class="modal-basic" href="/member/edit" id="header-login"><button
                                      class="btn btn-border-w btn-round btn-xs main-login-btn"
                                      type="button">마이페이지</button></a>
                            </c:if>

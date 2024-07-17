@@ -20,24 +20,33 @@ public class OwnerService {
     }
 
     public int join(OwnerVo vo) throws Exception {
-//        if(vo.getId().length() < 4){
-//            throw new Exception("아이디가 너무 짧습니다.");
-//        }
-//        if(vo.getPwd().length() < 3){
-//            throw new Exception("비밀번호가 너무 짧습니다.");
-//        }
-//        if(vo.getPwd().equals(vo.getPwd2())){
-//            throw new Exception("비밀번호가 일치하지 않습니다.");
-//        }
-        return dao.join(vo);
-    }
-
-    public int pwdEdit(OwnerVo vo) throws Exception {
-
+        if(vo.getId().length() < 4){
+            throw new Exception("아이디가 너무 짧습니다.");
+        }
         if(vo.getPwd().length() < 3){
             throw new Exception("비밀번호가 너무 짧습니다.");
         }
+        if(vo.getPwd().equals(vo.getPwd2())){
+            throw new Exception("비밀번호가 일치하지 않습니다.");
+        }
+        return dao.join(vo);
+    }
 
-        return dao.pwdEdit(vo);
+
+    public OwnerVo editOwner(String no) {
+        return dao.editOwner(no);
+    }
+
+    public int editPrivacy(OwnerVo vo) {
+        if(vo.getPwd() != null){
+            if(vo.getPwd().length() < 3){
+                throw new RuntimeException("비밀번호가 너무 짧습니다.");
+            }
+            return dao.editPwd(vo);
+        } else if (vo.getNick() != null) {
+            return dao.editNick(vo);
+        }else {
+            return dao.editPhone(vo);
+        }
     }
 }

@@ -5,6 +5,7 @@ import com.kh.camp.member.vo.MemberVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -45,6 +46,11 @@ public class MemberController {
     }
     ss.setAttribute("loginVo", loginVo);
     return "redirect:/home"; // 로그인 실패 시 리다이렉트할 페이지
+  }
+
+  @GetMapping("edit")
+  public String editMem(HttpSession session, Model model){
+    return "member/memberEdit";
   }
 }
 

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <header class="header">
         <div class="logo-container">
@@ -13,7 +14,26 @@
 
         <!-- start: search & user box -->
         <div class="header-right">
+            <!-- 로그인/로그아웃 Start -->
+                     <li style="list-style: none;">
+                        
+                            <c:if test="${loginOwnerVo != null}">
+                                <a class="modal-basic" href="/owner/edit" id="header-login">
+                                    <button class="btn btn-border-w btn-round btn-xs main-login-btn"
+                                          type="button">마이페이지</button></a>
+                            </c:if>
+                            
+                            <c:if test="${loginOwnerVo == null}">
+                               <a class="modal-basic" href="/member/login" id="header-login"><button
+                                     class="btn btn-border-w btn-round btn-xs main-login-btn"
+                                     type="button">LOGIN</button></a>
+                            </c:if>
+                     
+                       
 
+
+                     </li>
+            <!-- 로그인/로그아웃 End -->
 
 
 
