@@ -25,6 +25,4 @@ public class CamplistDao {
         int totalCount = camplistMapper.countCamplistByCriteria(sortCondition, searchKeyword);
         return new ResultPage(currentPage, totalCount, PAGE_SIZE);
     }
-
-
 }

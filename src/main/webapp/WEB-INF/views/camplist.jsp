@@ -8,7 +8,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Document Title -->
     <title>ListCamp</title>
 
     <style type="text/css">
@@ -153,30 +152,30 @@
                     <div class="row">
                         <!-- 캠핑장 이미지 -->
                         <div class="col-lg-3">
-                            <div class="image" name="campNo" data-campNo="${camp.campNo}">
+                            <div class="image" name="campNo" data-campNo="${camp.no}">
                                <!-- 캠핑장 이미지 들어가야함 -->
-                               <img src="" alt="캠핑장 대표이미지" style="max-width: 100%; max-height: 100%; border-radius: 10px;">
+                               <img src="${camp.zoneLayoutImg}" alt="캠핑장 대표이미지" style="max-width: 100%; max-height: 100%; border-radius: 10px;">
                             </div>
                         </div>
                         <!-- 캠핑장 정보 -->
                         <div class="col-lg-9">
                             <div class="row">
-                                <div class="col-xs-4 camp_name_sub">${camp.user.campName}&nbsp;</div>
-                                <div class="col-xs-4" style="margin-top: 3px;"> 등록일 : ${camp.campRegDate}</div>
+                                <div class="col-xs-4 camp_name_sub">${camp.name}&nbsp;</div>
+                                <div class="col-xs-4" style="margin-top: 3px;"> 등록일 : ${camp.holiDay}</div>
                             </div>
                             <div class="row">
                                 <br>
-                                <div class="col-xs-2 substring" value="${camp.campRate}"></div>
-                                <div class="col-xs-4"> 이달의 조회수 : ${camp.campViewCountCurrentMonth}</div>
+                                <div class="col-xs-2 substring" value="${camp.rating}"></div>
+                                <div class="col-xs-4"> 이달의 조회수 : ${camp.viewCount}</div>
                             </div>
                             <div class="row">
                                 <br>
-                                <div class="col-xs-8" style="font-size: medium;"> 주소 : ${camp.user.addr}</div>
-                                <div class="col-xs-4 phone_format" value="${camp.user.campCall}">전화번호 : ${camp.user.campCall}</div>
+                                <div class="col-xs-8" style="font-size: medium;"> 주소 : ${camp.address}</div>
+                                <div class="col-xs-4 phone_format" value="${camp.tel}">전화번호 : ${camp.tel}</div>
                             </div>
                             <div class="row">
                                 <br>
-                                <div class="col-xs-12"> ${camp.campSummery}</div>
+                                <div class="col-xs-12"> ${camp.introduction}</div>
                             </div>
                         </div>
                     </div>
@@ -187,9 +186,7 @@
         </div>
     </div>
     <!-- PageNavigation -->
-    <div class="row">
-
-    </div>
+    <div class="row"></div>
 
     <jsp:include page="../../views/common/footer.jsp"/>
 
