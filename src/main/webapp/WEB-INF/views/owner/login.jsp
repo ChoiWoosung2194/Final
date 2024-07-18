@@ -12,43 +12,8 @@
 
 				<title>사업자 로그인</title>
 
-				<style>
-					.form-group .btn {
-						height: 26px;
-						padding-top: 0;
-						padding-bottom: 0;
-						margin: auto 10px;
-						color: blue;
-					}
 
-					.form-group label {
-						width: 170px;
-					}
-
-					#checkMailAuth {
-						margin-left: 232px;
-						margin-top: 10px;
-
-					}
-
-					.img_business {
-						border: 2px solid #A8A8A8;
-						margin-top: 30px;
-						margin-bottom: 30px;
-						padding-top: 10px;
-						padding-bottom: 10px;
-					}
-
-					.checkFont {
-						font-size: 12px;
-						padding-left: 57px;
-					}
-				</style>
-
-				<script src="https://oss.maxcdn.com/libs/html5shiv/  /html5shiv.js"></script>
-				<script src="https://oss.maxcdn.com/libs/respond.js/ /respond.min.js"></script>
-				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
+				<link rel="stylesheet" href="/resources/css/login.css">
 
 			</head>
 
@@ -74,16 +39,14 @@
 
 
 										<form  action="/owner/login" method="post">
-
-
-										<input type="text" name="id" placeholder="아이디를 입력하세여">    
+										<input type="text" name="id" placeholder="아이디를 입력하세여">
 										<br>
 										<br>
-										<input type="password" name="pwd" placeholder="비밀번호를 입력하세여">    
+										<input type="password" name="pwd" placeholder="비밀번호를 입력하세여">
 										<br>
 										<br>
 										<input type="submit" value="로그인">
-
+										<li style="list-style: none;"><a href="/owner/join">회원가입</a></li>
 										</form>
 
 
@@ -99,7 +62,7 @@
 					</div>
 				</main>
 
-				
+
 			</body>
 
 			</html>
