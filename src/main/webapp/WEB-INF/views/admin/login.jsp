@@ -12,38 +12,7 @@
 
 				<title>관리자 로그인</title>
 
-				<style>
-					.form-group .btn {
-						height: 26px;
-						padding-top: 0;
-						padding-bottom: 0;
-						margin: auto 10px;
-						color: blue;
-					}
-
-					.form-group label {
-						width: 170px;
-					}
-
-					#checkMailAuth {
-						margin-left: 232px;
-						margin-top: 10px;
-
-					}
-
-					.img_business {
-						border: 2px solid #A8A8A8;
-						margin-top: 30px;
-						margin-bottom: 30px;
-						padding-top: 10px;
-						padding-bottom: 10px;
-					}
-
-					.checkFont {
-						font-size: 12px;
-						padding-left: 57px;
-					}
-				</style>
+			<link rel="stylesheet" href="/resources/css/login.css">
 
 				<script src="https://oss.maxcdn.com/libs/html5shiv/  /html5shiv.js"></script>
 				<script src="https://oss.maxcdn.com/libs/respond.js/ /respond.min.js"></script>

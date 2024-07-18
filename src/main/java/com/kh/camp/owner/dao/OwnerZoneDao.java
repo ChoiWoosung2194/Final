@@ -34,4 +34,8 @@ public class OwnerZoneDao {
 
         return mapper.uploadImg(vo);
     }
+
+    public String selectZoneNo(ZoneImgVo vo) {
+        return mapper.selectZoneNo(vo);
+    }
 }

@@ -9,6 +9,8 @@ import java.util.List;
 public class ZoneImgVo {
 
     private String no;
-    private String campingzoneNo;
-    private List<MultipartFile> filePathList;
+    private String zoneName;
+    private String zoneNo;
+    private String filePath;
+    private MultipartFile imgPath;
 }
