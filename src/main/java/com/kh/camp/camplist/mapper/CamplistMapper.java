@@ -11,7 +11,7 @@ import java.util.List;
 public interface CamplistMapper {
 
     @Select({
-            "<script>",
+
             "SELECT * FROM CAMPSITE",
             "WHERE DEL_YN = 'N'",
             "<if test='searchKeyword != null and !searchKeyword.isEmpty()'>",
@@ -24,8 +24,7 @@ public interface CamplistMapper {
             "<when test='sortCondition == \"최근 등록일순\"'>reg_date DESC</when>",
             "</choose>",
             "LIMIT #{offset}, #{pageSize}",
-            "</script>"
-    })
+                })
     List<CamplistVo> findCamplistByCriteria(@Param("sortCondition") String sortCondition,
                                             @Param("searchKeyword") String searchKeyword,
                                             @Param("offset") int offset,
