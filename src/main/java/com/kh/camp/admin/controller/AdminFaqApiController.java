@@ -28,8 +28,8 @@ public class AdminFaqApiController {
 
     @PostMapping
     public ResponseEntity<String> faqInsert(AdminFaqVo vo , HttpSession session){
-        AdminVo admin = (AdminVo) session.getAttribute("admin");
-        String no = admin.getNo();
+        AdminVo loginAdminVo = (AdminVo) session.getAttribute("loginAdminVo");
+        String no = loginAdminVo.getNo();
         vo.setWriter(no);
         int result = service.faqInsert(vo);
         if(result != 1){

@@ -49,10 +49,10 @@ pageEncoding="UTF-8"%>
 			    <form action="/owner/zone/img" method="post" enctype="multipart/form-data">
 			      <br>
 						존 이름 :: <input type="text" name="zoneName">
-						사진 업로드 :: <input type="file" name="filePath" multiple>
+						사진 업로드 :: <input type="file" name="imgPath">
 						<br>
 						<input type="submit" value="사진 올리기">
-					</form>
+			    </form>
 			    
          <!---------------------------------------------------------------------------------->
 </section>

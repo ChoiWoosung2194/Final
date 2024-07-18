@@ -41,7 +41,7 @@
                                     <a href="/admin/member">일반회원 관리</a>
                                 </li>
                                 <li>
-                                    <a href="/owner/owner">사업자회원 관리</a>
+                                    <a href="/admin/owner">사업자회원 관리</a>
                                 </li>
 
                             </ul>

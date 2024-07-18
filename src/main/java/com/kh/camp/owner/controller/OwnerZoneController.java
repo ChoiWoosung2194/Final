@@ -1,15 +1,22 @@
 package com.kh.camp.owner.controller;
 
 import com.kh.camp.owner.service.OwnerZoneService;
+import com.kh.camp.owner.vo.OwnerVo;
 import com.kh.camp.owner.vo.ZoneImgVo;
 import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.util.List;
 
 @Controller
 @RequestMapping("owner")
@@ -47,13 +54,25 @@ public class OwnerZoneController {
         return "owner/zone/list";
     }
 
-    //캠핑존 사진 여러개 업뎃
+    //캠핑존 사진 업로드
     @PostMapping("zone/img")
-    public String uploadImg(String zoneName , ZoneImgVo vo) throws Exception {
-        String x = service.uploadImg(zoneName, vo);
+    public String uploadImg(ZoneImgVo vo) throws Exception {
+        String zoneNo = service.selectZoneNo(vo);
+        vo.setZoneNo(zoneNo);
 
 
-        return "redirect:/owner/main";
+        MultipartFile zoneImg = vo.getImgPath();
+        String originName = zoneImg.getOriginalFilename();
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+
+        zoneImg.transferTo(targetFile);
+        vo.setFilePath(originName);
+
+        int result = service.uploadImg(vo);
+        if(result != 1){
+            throw new Exception("등록에 실패하였습니다.");
+        }
+        return "redirect:/owner/zone/insert";
     }
 
 }

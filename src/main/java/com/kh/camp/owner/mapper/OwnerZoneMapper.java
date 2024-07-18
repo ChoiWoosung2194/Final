@@ -45,4 +45,7 @@ public interface OwnerZoneMapper {
             "VALUES " +
             "(SEQ_ZONE_IMG_NO.NEXTVAL , #{zoneNo} , #{filePath}")//TODO filepath를 for 돌려서 값을 넣어야함
     int uploadImg(ZoneImgVo vo);
+
+    @Select("SELECT NO FROM ZONE WHERE NAME = #{zoneName}")
+    String selectZoneNo(ZoneImgVo vo);
 }

@@ -30,26 +30,11 @@ public class OwnerZoneService {
 
 
 
-    public String uploadImg(String zoneName , ZoneImgVo vo) {
-//        List<MultipartFile> filePathList = vo.getFilePathList();
-//
-//        ZoneVo zoneVo = dao.zoneNoByName(zoneName);
-//        String zoneNo = zoneVo.getNo();
-//        vo.setCampingzoneNo(zoneNo);
-//
-//        int sum = 0;
-//        for (MultipartFile att : filePathList) {
-//            String originName = att.getOriginalFilename();
-//            File targetFile = new File("D:\\chemi\\src\\main\\webapp\\resources\\images\\" + originName);
-//            vo.setFilePathList((List<MultipartFile>) targetFile);
-//            sum += dao.uploadImg(vo);
-//        }
-//        if(sum == filePathList.size()){
-//            return "true";
-//        }else {
-//            throw new RuntimeException();
-//        }
-    return null;
+    public int uploadImg(ZoneImgVo vo) {
+       return dao.uploadImg(vo);
+    }
 
+    public String selectZoneNo(ZoneImgVo vo) {
+        return dao.selectZoneNo(vo);
     }
 }
