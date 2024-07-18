@@ -1,5 +1,6 @@
 package com.kh.camp.payment;
 
+import com.kh.camp.member.vo.MemberVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,14 +16,17 @@ import java.util.Map;
 public class KakaoPayService {
 
     // 카카오페이 결제창 연결
-    public ReadyResponse payReady(String name, int totalPrice) {
+    public ReadyResponse payReady(String name,  String partner_user_id, int quantity, int totalPrice ) {
+
+//        int orderNo =
+
 
         Map<String, String> parameters = new HashMap<>();
         parameters.put("cid", "TC0ONETIME");                                    // 가맹점 코드(테스트용)
         parameters.put("partner_order_id", "1234567890");                       // 주문번호
-        parameters.put("partner_user_id", "roommake");                          // 회원 아이디
+        parameters.put("partner_user_id", partner_user_id);                          // 회원 아이디
         parameters.put("item_name", name);                                      // 상품명
-        parameters.put("quantity", "1");                                        // 상품 수량
+        parameters.put("quantity", String.valueOf(quantity));                                        // 상품 수량
         parameters.put("total_amount", String.valueOf(totalPrice));             // 상품 총액
         parameters.put("tax_free_amount", "0");                                 // 상품 비과세 금액
         parameters.put("approval_url", "http://127.0.0.1:8080/order/pay/completed"); // 결제 성공 시 URL
@@ -47,12 +51,13 @@ public class KakaoPayService {
     // 카카오페이 결제 승인
     // 사용자가 결제 수단을 선택하고 비밀번호를 입력해 결제 인증을 완료한 뒤,
     // 최종적으로 결제 완료 처리를 하는 단계
-    public ApproveResponse payApprove(String tid, String pgToken) {
+    public ApproveResponse payApprove(String tid, String pgToken, String id) {
+
         Map<String, String> parameters = new HashMap<>();
         parameters.put("cid", "TC0ONETIME");              // 가맹점 코드(테스트용)
         parameters.put("tid", tid);                       // 결제 고유번호
         parameters.put("partner_order_id", "1234567890"); // 주문번호
-        parameters.put("partner_user_id", "roommake");    // 회원 아이디
+        parameters.put("partner_user_id", id);            // 회원 아이디
         parameters.put("pg_token", pgToken);              // 결제승인 요청을 인증하는 토큰
 
         HttpEntity<Map<String, String>> requestEntity = new HttpEntity<>(parameters, this.getHeaders());
@@ -61,7 +66,6 @@ public class KakaoPayService {
         String url = "https://open-api.kakaopay.com/online/v1/payment/approve";
         ApproveResponse approveResponse = template.postForObject(url, requestEntity, ApproveResponse.class);
         log.info("결제승인 응답객체: " + approveResponse);
-
         return approveResponse;
     }
 
