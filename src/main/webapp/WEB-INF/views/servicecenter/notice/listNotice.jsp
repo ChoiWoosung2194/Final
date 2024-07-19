@@ -77,7 +77,7 @@
 
             <div class="main sc-main">
                <section class="module bg-dark-30 about-page-header"
-                  data-background="/resources/images/servicecenter.png" style="  padding-top: 370px;  padding-bottom: 390px;">
+                  data-background="/resources/images/notice.png" style="  padding-top: 370px;  padding-bottom: 390px;">
                   <div class="container">
                      <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
@@ -111,7 +111,6 @@
                               </table>
                            </div>
 
-                           <jsp:include page="/WEB-INF/views/common/pageNavigator.jsp" />
 
                         </div>
                      </section>
