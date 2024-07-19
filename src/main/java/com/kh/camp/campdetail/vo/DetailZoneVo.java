@@ -10,4 +10,5 @@ public class DetailZoneVo {
     private String name;
     private int maxPeople;
     private double price;
+    private String filePath;
 }

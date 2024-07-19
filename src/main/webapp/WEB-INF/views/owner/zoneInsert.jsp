@@ -43,7 +43,7 @@ pageEncoding="UTF-8"%>
         <h3><strong>캠핑존 등록하기</strong></h3>
 				<div id="zoneInsert">
 					<hr>
-					<form action="/owner/zone/img" method="post" enctype="multipart/form-data">
+					<form action="/owner/zone/insert" method="post" enctype="multipart/form-data">
 					<input type="text" name="seasonNo" value="1" hidden>
 					<input type="text" name="name" placeholder="존 이름">
 					<input type="number" name="maxPeople" placeholder="최대인원"> 명

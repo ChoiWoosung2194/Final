@@ -85,7 +85,7 @@
                 <div class="row">
                     <c:forEach items="${voList}" var="camp">
                         <div class="card" onclick="location.href='/campdetail/${camp.no}'">
-                            <img src="/resources/images/${camp.zoneLayoutImg}" alt="${camp.name}">
+                            <img src="/resources/images/campsiteImg/${camp.zoneLayoutImg}" alt="${camp.name}">
                             <h2>${camp.name}</h2>
                             <p>${camp.address}</p>
                         </div>

@@ -3,6 +3,7 @@ package com.kh.camp.campdetail.service;
 import com.kh.camp.campdetail.dao.CampDetailDao;
 import com.kh.camp.campdetail.vo.CampDetailVo;
 import com.kh.camp.campdetail.vo.DetailZoneVo;
+import com.kh.camp.owner.vo.CampNoticeVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,9 @@ public class CampDetailService {
 
     public List<DetailZoneVo> getZonesByCampId(int campId) {
         return campDetailDao.getZonesByCampId(campId);
+    }
+
+    public List<CampNoticeVo> getCampNotice(int campId) {
+        return campDetailDao.getCampNotice(campId);
     }
 }
