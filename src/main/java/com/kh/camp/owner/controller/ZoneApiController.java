@@ -21,21 +21,7 @@ public class ZoneApiController {
 
     private final OwnerZoneService service;
 
-    //캠핑존 등록(처리)
-    @PostMapping
-    public ResponseEntity<String> zoneInsert(HttpSession session , ZoneVo vo) throws Exception {
-        OwnerVo ownerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
-        String ownerNo = ownerVo.getNo();
-        vo.setOwnerNo(ownerNo);
 
-        int result = service.zoneInsert(vo);
-        if(result != 1){
-             return ResponseEntity.internalServerError().body("등록에 실패하였습니다.");
-        }else {
-            return ResponseEntity.ok("등록 되었습니다.");
-        }
-
-    }
     //캠핑존 리스트(화면)
     @GetMapping
     public List<ZoneVo> zoneList(HttpServletRequest req){
