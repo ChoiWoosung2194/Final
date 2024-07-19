@@ -34,14 +34,14 @@ pageEncoding="UTF-8"%>
         <h3><strong>공지사항</strong></h3>
 
 			<hr>
-    <table border="1">
+    <table class="table table-hover mb-none">
         <thead>
            <tr>
-              <th>번호</th>
-              <th>제목</th>
-              <th>작성자</th>
-              <th>조회수</th>
-              <th>작성날짜</th>
+              <th class="col-md-1" style="text-align: center;">번호</th>
+              <th style="text-align: center;">제목</th>
+              <th class="col-md-1" style="text-align: center;">작성자</th>
+              <th style="text-align: center;">조회수</th>
+              <th style="text-align: center;">작성날짜</th>
            </tr>
         </thead>
         <tbody>

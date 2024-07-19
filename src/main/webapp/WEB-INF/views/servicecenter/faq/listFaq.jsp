@@ -77,7 +77,7 @@
 
             <div class="main sc-main">
                <section class="module bg-dark-30 about-page-header"
-                  data-background="/resources/images/servicecenter.png" style="padding-top: 370px;
+                  data-background="/resources/images/faq.png" style="padding-top: 370px;
     padding-bottom: 390px;">
                   <div class="container">
                      <div class="row">
@@ -112,7 +112,6 @@
                               </table>
                            </div>
 
-                           <jsp:include page="/WEB-INF/views/common/pageNavigator.jsp" />
 
                         </div>
                      </section>
@@ -137,7 +136,7 @@
       <script>
 
          $.ajax({
-            url : "http://127.0.0.1:8080/faq/detail ",
+            url : "http://127.0.0.1:8080/faq/api ",
             method : "get",
             data : {},
             success : (x) => {
