@@ -15,7 +15,12 @@ pageEncoding="UTF-8"%>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 		<jsp:include page="/resources/commonCssAdmin.jsp"/>
-
+<script>
+			   const msg = "${sessionScope.msg}";
+    if (msg) {
+        alert("메시지: " + msg);
+       session.removeAttribute("msg");
+    }
 	</head>
 	<body >
 		<section class="body">

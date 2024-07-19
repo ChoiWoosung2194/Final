@@ -3,6 +3,7 @@ package com.kh.camp.campdetail.controller;
 import com.kh.camp.campdetail.service.CampDetailService;
 import com.kh.camp.campdetail.vo.CampDetailVo;
 import com.kh.camp.campdetail.vo.DetailZoneVo;
+import com.kh.camp.owner.vo.CampNoticeVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +22,11 @@ public class CampDetailController {
     public String showCampDetail(@PathVariable int campId, Model model) {
         CampDetailVo campDetail = campDetailService.getCampDetailById(campId);
         List<DetailZoneVo> zones = campDetailService.getZonesByCampId(campId);
+        List<CampNoticeVo> voList = campDetailService.getCampNotice(campId);
 
         model.addAttribute("campDetail", campDetail);
         model.addAttribute("zones", zones);
+        model.addAttribute("noticeList" , voList);
 
         return "campdetail";
     }

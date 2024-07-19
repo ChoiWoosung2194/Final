@@ -39,7 +39,7 @@ public class OwnerZoneController {
     }
 
     //캠핑존 등록(처리)
-    @PostMapping
+    @PostMapping("zone/insert")
     public String zoneInsert(HttpSession session , ZoneVo vo) throws Exception {
         OwnerVo ownerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String ownerNo = ownerVo.getNo();

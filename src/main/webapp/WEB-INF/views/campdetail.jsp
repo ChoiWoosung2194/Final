@@ -80,7 +80,7 @@
                         <div class="row mb-20">
                             <div class="col-sm-12">
                                 <div class="description">
-                                    <p style="margin-bottom: 0px;">주변환경&nbsp;:&nbsp;
+                                    <p style="margin-bottom: 0px;">주요시설&nbsp;:&nbsp;
                                         <c:if test="${campDetail.market}">
                                             <img src="${pageContext.request.contextPath}/resources/images/facility/market.png" alt="시장"> 시장,
                                         </c:if>
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <img src="${campDetail.zoneLayoutImg}" alt="캠핑존 레이아웃" class="img-responsive" style="width:100%; height:auto;"/>
+                        <img src="/resources/images/campsiteImg/${campDetail.zoneLayoutImg}" alt="캠핑존 레이아웃" class="img-responsive" style="width:100%; height:auto;"/>
                     </div>
                 </div>
                 <div class="row mt-40">
@@ -179,7 +179,7 @@
                             <c:forEach var="zone" items="${zones}">
                                 <div class="col-sm-4 mb-20">
                                     <div class="zone-box">
-                                        <img src="${zone.imgUrl}" alt="${zone.name}" class="img-responsive">
+                                        <img src="/resources/images/${zone.filePath}" alt="${zone.name}" class="img-responsive">
                                         <h3 class="zone-name">${zone.name}</h3>
                                         <p>가격: <fmt:formatNumber value="${zone.price}" type="currency"/> / 최대 인원: ${zone.maxPeople}명</p>
                                         <button class="btn btn-round btn-d select-zone" data-zone-id="${zone.no}" data-zone-name="${zone.name}" data-zone-price="${zone.price}" data-zone-maxpeople="${zone.maxPeople}">예약하기</button>
@@ -194,7 +194,11 @@
                         <h2 class="section-title font-alt">공지사항</h2>
                         <div class="row">
                             <div class="col-sm-12">
-                                <p>${campDetail.notice}</p>
+                                <c:forEach items="${noticeList}" var="notice">
+                                    <div class="card">
+                                        <h3>${notice.title}</h3>
+                                    </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
