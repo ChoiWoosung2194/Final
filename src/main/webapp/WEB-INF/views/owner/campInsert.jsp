@@ -16,6 +16,15 @@ pageEncoding="UTF-8"%>
 
 		<jsp:include page="/resources/commonCssAdmin.jsp"/>
 
+		<link rel="stylesheet" href="/resources/css/campInsert.css">
+        <script>
+            const msg = "${sessionScope.msg}";
+ if (msg) {
+     alert("메시지: " + msg);
+    session.removeAttribute("msg"); 
+ }
+     </script>
+
 	</head>
 	<body >
 		<section class="body">
@@ -34,44 +43,27 @@ pageEncoding="UTF-8"%>
         <h3><strong>캠핑장 등록하기</strong></h3>
 
 			<hr>
-			<form  action="/owner/camp/insert" method="post" enctype="multipart/form-data" >
+			<div id="campInsert">
+    <form action="/owner/camp/insert" method="post" enctype="multipart/form-data">
+        <input type="text" name="area" placeholder="지역">
+        <input type="text" name="campsiteCategory" placeholder="ex)오토 캠핑장, 글램핑장">
+        <input type="text" name="name" placeholder="캠핑장 이름">
+        <input type="text" name="tel" placeholder="전화번호">
+        <input type="text" name="address" placeholder="캠핑장 주소">
+        <input type="text" name="basicInfo" placeholder="한줄 소개를 적어주세요">
+        <textarea name="introduction" placeholder="캠핑장 소개를 적어주세요" style="width: 100%; height: 300px;"></textarea>
+        <input type="file" name="imgPath">
+        <input type="submit" value="작성하기">
+    </form>
 
-				<input type="text" name="area" placeholder="지역">
-				<br>
-				<br>
-				<input type="text" name="campsiteCategory" placeholder="ex)오토 캠핑장, 글램핑장">
-				<br>
-				<br>
-				<input type="text" name="name" placeholder="캠핑장 이름">
-				<br>
-                <br>
-				<input type="text" name="tel" placeholder="전화번호">
-				<br>
-				<br>
-				<input type="text" name="address" placeholder="캠핑장 주소">
-				<br>
-				<br>
-			    <input type="text" name="basicInfo" placeholder="한줄 소개를 적어주세요">
-				<br>
-				<br>
-				<textarea style="width: 400px; height: 300px;" name="introduction" placeholder="캠핑장 소개를 적어주세요"></textarea>
-				<br>
-				<br>
-				<input type="file" name="imgPath">
-				<br>
-				<br>
-				<input type="submit" value="작성하기">
-			</form>
-
-			<hr>
-			<h3><strong>캠핑장 사진 등록하기</strong></h3>
-			<hr>
-			<form action="/owner/campImg" method="post">
-				<br>
-				<input type="text" name="campName">
-				<br>
-				<input type="file" name="campImgList" multiple>
-			</form>
+    <hr>
+    <h3><strong>캠핑장 사진 등록하기</strong></h3>
+    <hr>
+    <form action="/owner/campImg" method="post" enctype="multipart/form-data">
+        <input type="file" name="imgPath">
+        <input type="submit" value="사진 올리기">
+    </form>
+</div>
          <!---------------------------------------------------------------------------------->
 </section>
 
@@ -81,9 +73,3 @@ pageEncoding="UTF-8"%>
 	</body>
 </html>
 
-<script>
-	
-	const x = document.querySelector("input[name=name]").value;
-
-	document.querySelector("input[name=campName]").innerText = x;
-</script>

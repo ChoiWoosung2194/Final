@@ -1,7 +1,7 @@
 package com.kh.camp.owner.mapper;
 
 import com.kh.camp.owner.vo.CampingVo;
-import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.CampsiteImgVo;
 import com.kh.camp.owner.vo.dayoffVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -31,12 +31,16 @@ public interface CampingMapper {
     @Select("SELECT NO FROM CAMPSITE WHERE NAME = #{campName}")
     CampingVo campByName(String campName);
 
-    @Insert("INSERT INTO CAMP_IMG")
-    int insertCampImg(ImgVo vo);
+    @Insert("INSERT INTO CAMP_IMG (NO ,CAMPSITE_NO ,FILE_PATH) " +
+            "VALUES (SEQ_CAMP_IMG_NO.NEXTVAL,#{campsiteNo} ,#{filePath} )")
+    int insertCampImg(CampsiteImgVo vo);
 
     @Insert("INSERT INTO DAYOFF " +
             "(NO , OWNER_NO, TITLE, START_DATE, END_DATE) " +
             "VALUES " +
             "(SEQ_DAYOFF_NO.NEXTVAL, #{ownerNo} ,#{title} ,#{startDate} , #{endDate}")
     int insertDay(dayoffVo vo);
+
+    @Select("SELECT NO FROM CAMPSITE WHERE OWNER_NO = #{ownerNo}")
+    String selectCampNo(String ownerNo);
 }

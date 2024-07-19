@@ -56,7 +56,9 @@ public class OwnerZoneController {
 
     //캠핑존 사진 업로드
     @PostMapping("zone/img")
-    public String uploadImg(ZoneImgVo vo) throws Exception {
+    public String uploadImg(ZoneImgVo vo , HttpSession session) throws Exception {
+        OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
+        vo.setOwnerNo(loginOwnerVo.getNo());
         String zoneNo = service.selectZoneNo(vo);
         vo.setZoneNo(zoneNo);
 

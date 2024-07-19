@@ -3,12 +3,12 @@ package com.kh.camp.owner.vo;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-
 @Data
-public class ImgVo {
+public class CampsiteImgVo {
 
     private String no;
     private String campsiteNo;
-    private String filePathList;
+    private MultipartFile imgPath;
+    private String filePath;
+
 }

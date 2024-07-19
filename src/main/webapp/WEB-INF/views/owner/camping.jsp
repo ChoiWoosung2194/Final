@@ -15,6 +15,7 @@ pageEncoding="UTF-8"%>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 		<jsp:include page="/resources/commonCssAdmin.jsp"/>
+		<link rel="stylesheet" href="/resources/css/campsite.css">
 
 	</head>
 	<body >
@@ -34,30 +35,45 @@ pageEncoding="UTF-8"%>
         <h3><strong>내 캠핑장</strong></h3>
 
 			<hr>
-				캠핑장 썸네일 이미지 <img style="height: 300px; width: 300px;" src="/resources/images/${voList.zoneLayoutImg}" >
-				<br>
-				<br>
-				지역 :: <input type="text" name="area" value="${voList.area}" readonly>
-				<br>
-				<br>
-				캠핑장 타입 :: <input type="text" name="campsiteCategory" value="${voList.campsiteCategory}" readonly>
-				<br>
-				<br>
-				캠핑장 이름 :: <input type="text" name="name" value="${voList.name}" readonly>
-				<br>
-                <br>
-				캠핑장 전화번호 :: <input type="text" name="tel" value="${voList.tel}" readonly>
-				<br>
-				<br>
-				캠핑장 주소 :: <input type="text" name="address" value="${voList.address}" readonly>
-				<br>
-				<br>
-			    캠핑장 한줄 소개 :: <input type="text" name="basicInfo" value="${voList.basicInfo}" readonly>
-				<br>
-				<br>
-				캠핑장 소개 :: <textarea style="width: 400px; height: 300px;" name="introduction" readonly>${voList.introduction}</textarea>
+			<div id="campsite">
+				<img src="/resources/images/${voList.zoneLayoutImg}" style="height: 300px; width: 300px;">
 				
-
+				<div class="form-group">
+						<label for="area">지역</label>
+						<input type="text" id="area" name="area" value="${voList.area}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="campsiteCategory">캠핑장 타입</label>
+						<input type="text" id="campsiteCategory" name="campsiteCategory" value="${voList.campsiteCategory}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="name">캠핑장 이름</label>
+						<input type="text" id="name" name="name" value="${voList.name}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="tel">캠핑장 전화번호</label>
+						<input type="text" id="tel" name="tel" value="${voList.tel}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="address">캠핑장 주소</label>
+						<input type="text" id="address" name="address" value="${voList.address}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="basicInfo">캠핑장 한줄 소개</label>
+						<input type="text" id="basicInfo" name="basicInfo" value="${voList.basicInfo}" readonly>
+				</div>
+				
+				<div class="form-group">
+						<label for="introduction">캠핑장 소개</label>
+						<textarea id="introduction" name="introduction" readonly>${voList.introduction}</textarea>
+				</div>
+		</div>
+		
          <!---------------------------------------------------------------------------------->
 </section>
 

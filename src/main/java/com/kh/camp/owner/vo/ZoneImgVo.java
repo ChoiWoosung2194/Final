@@ -9,6 +9,7 @@ import java.util.List;
 public class ZoneImgVo {
 
     private String no;
+    private String ownerNo;
     private String zoneName;
     private String zoneNo;
     private String filePath;
