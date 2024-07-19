@@ -31,7 +31,7 @@
 						<!-- <section class="module bg-dark-30 about-page-header"
 						data-background="../../resources/images/addGeneralUserImg.png"> -->
 						<div class="container" style="padding-top: 72px;">
-							<img src="../../resources/images/ownerLogin.png" alt="">
+							<img src="../../resources/images/admin.png" alt="">
 						</div>
 						<!-- </section> -->
 						<section class="module" style="padding-top:0;">
