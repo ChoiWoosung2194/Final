@@ -137,7 +137,7 @@
       <script>
 
          $.ajax({
-            url : "http://127.0.0.1:8080/faq/api ",
+            url : "http://127.0.0.1:8080/faq/detail ",
             method : "get",
             data : {},
             success : (x) => {

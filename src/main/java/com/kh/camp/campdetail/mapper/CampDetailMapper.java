@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper
 public interface CampDetailMapper {
-    @Select("SELECT * FROM CAMPSITE WHERE no = #{campId}")
+    @Select("SELECT * FROM CAMPSITE WHERE OWNER_NO = #{campId}")
     CampDetailVo getCampDetailById(int campId);
 
     @Select("SELECT * FROM ZONE WHERE OWNER_NO = #{campId}")

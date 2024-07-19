@@ -114,12 +114,12 @@
                     <section class="panel">
                         <div class="panel-body transferlist">
                             <div class="table-responsive">
-                                제목 : <input type="text" name="title" value="${vo.title}">
-                                조회수 : <input type="text" value="${vo.hit}">
+                                제목 : <input type="text" name="title" value="${vo.title}" readonly>
+                                조회수 : <input type="text" value="${vo.hit}" readonly>
                                 <br>
                                 <br>
                                 내용 : <br>
-                                <textarea name="content" id="">${vo.content}</textarea>
+                                <textarea name="content" id="" readonly>${vo.content}</textarea>
                             </div>
 
                         </div>
