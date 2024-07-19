@@ -513,9 +513,9 @@ VALUES(SEQ_CAMPSITE_NOTICE_NO.NEXTVAL, 10,'3번 예약공지',
 -----F&Q-----
 
 INSERT INTO FAQ(NO, WRITER, TITLE, CONTENT)
-VALUES(SEQ_FAQ_NO.NEXTVAL, 1, '[모텔] 취소/환불 규정이 어떻게 되나요?','[취소 규정]
+VALUES(SEQ_FAQ_NO.NEXTVAL, 1, '[글램핑] 취소/환불 규정이 어떻게 되나요?','[취소 규정]
 - 입실 1일 전 무료 취소 가능
-  ※ 단, 일부 모텔 숙박 상품은 모텔 자체의 취소 규정이 적용되어 입실 1일 전이라도 취소 및 환불이 불가합니다.
+  ※ 단, 일부 글램핑 숙박 상품은 모텔 자체의 취소 규정이 적용되어 입실 1일 전이라도 취소 및 환불이 불가합니다.
 
 [취소수수료 부과 예외 규정]
 ? 입실 시각 경과 전 발생한 예약
@@ -529,6 +529,7 @@ VALUES(SEQ_FAQ_NO.NEXTVAL, 1, '[모텔] 취소/환불 규정이 어떻게 되나
 [취소 수수료 부과 정책 확인 경로]
 ? 예약/결제 전
 ▶ 객실 상세 페이지 > 객실 예약하기 클릭 > 취소 및 환불 불가 ⓘ');
+
 
 INSERT INTO FAQ(NO, WRITER, TITLE, CONTENT)
 VALUES(SEQ_FAQ_NO.NEXTVAL, 1, '[펜션/게스트하우스] 취소/환불 규정이 어떻게 되나요?',
