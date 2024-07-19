@@ -686,38 +686,6 @@ REFERENCES ZONE (
    NO
 );
 
-
-
--------------------------------------------더미데이터--------------------------------------------------------------------------
-INSERT INTO ADMIN
-(NO, ID, PWD, NICK)
-VALUES
-(SEQ_ADMIN_NO.NEXTVAL , 'admin01' , 'admin01' , '관리자');
-
-INSERT INTO SEASON(NO
-,TYPE
-,START_DATE
-,END_DATE)
-VALUES (SEQ_SEASON_NO.NEXTVAL , '성수기','2024-07-10','2024-09-01');
-
-INSERT INTO SEASON(NO
-,TYPE
-,START_DATE
-,END_DATE)
-VALUES (SEQ_SEASON_NO.NEXTVAL , '성수기','2024-07-10','2024-09-01');
-
-INSERT INTO SEASON(NO
-,TYPE
-,START_DATE
-,END_DATE)
-VALUES (SEQ_SEASON_NO.NEXTVAL , '성수기','2024-07-10','2024-09-01');
-
-INSERT INTO SEASON(NO
-,TYPE
-,START_DATE
-,END_DATE)
-VALUES (SEQ_SEASON_NO.NEXTVAL , '성수기','2024-07-10','2024-09-01');
-
 COMMIT;
 
 
