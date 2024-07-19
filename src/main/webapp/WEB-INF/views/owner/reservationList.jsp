@@ -34,22 +34,24 @@ pageEncoding="UTF-8"%>
         <h3><strong> 예약자 </strong></h3>
 
 			<hr>
-    <table border="1">
+			 <div class="table-responsive">
+    <table class="table table-hover mb-none">
         <thead>
            <tr>
-              <th>예약번호</th>
-              <th>예약자</th>
-              <th>인원수</th>
-              <th>체크인</th>
-              <th>체크아웃</th>
-              <th>존 이름</th>
-              <th>가격</th>
+              <th class="col-md-1">예약번호</th>
+              <th class="col-md-1">예약자</th>
+              <th class="col-md-1">인원수</th>
+              <th class="col-md-1">체크인</th>
+              <th class="col-md-1">체크아웃</th>
+              <th class="col-md-1">존 이름</th>
+              <th class="col-md-1">가격</th>
            </tr>
         </thead>
         <tbody>
 
         </tbody>
      </table>
+      </div>
          <!---------------------------------------------------------------------------------->
 </section>
 

@@ -34,18 +34,20 @@ pageEncoding="UTF-8"%>
         <h3><strong>캠핑장 공지사항</strong></h3>
 
 			<hr>
-    <table border="1">
+			 <div class="table-responsive">
+    <table class="table table-hover mb-none">
         <thead>
            <tr>
-              <th>번호</th>
-              <th>제목</th>
-              <th>조회수</th>
+              <th class="col-md-1">번호</th>
+              <th class="col-md-1">제목</th>
+              <th class="col-md-1">조회수</th>
            </tr>
         </thead>
         <tbody>
 
         </tbody>
      </table>
+      </div>
          <!---------------------------------------------------------------------------------->
 </section>
 

@@ -85,7 +85,7 @@
             				<section role="main" class="content-body" style="padding-top: 0px;">
                <section class="module" style="padding:20px">
                   <div class="container">
-
+   <!---------------------------------------------------------------------------------->
                      <section class="panel">
 
 
@@ -109,6 +109,8 @@
 
                                  </tbody>
                               </table>
+
+         <!---------------------------------------------------------------------------------->
                            </div>
                         </div>
                      </section>

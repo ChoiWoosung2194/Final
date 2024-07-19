@@ -31,23 +31,27 @@ pageEncoding="UTF-8"%>
         <section role="main" class="content-body" style="padding-top: 0px;">
 
         <!---------------------------------------------------------------------------------->
-        <h3><strong>캠핑존 리스트</strong></h3>
+            <h3><strong>캠핑존 리스트</strong></h3>
 
-			<hr>
-    <table border="1">
-        <thead>
-           <tr>
-              <th>존 이름</th>
-              <th>최대인원</th>
-              <th>가격</th>
-           </tr>
-        </thead>
-        <tbody>
+                <hr>
+                <div class="table-responsive">
+            <table class="table table-hover mb-none">
+                 <thead>
+                   <tr>
+                      <th class="col-md-1">존 이름</th>
+                      <th class="col-md-1">최대인원</th>
+                      <th class="col-md-1">가격</th>
+                   </tr>
+                 </thead>
 
-        </tbody>
-     </table>
+                 <tbody>
+
+                 </tbody>
+            </table>
+            </div>
+
          <!---------------------------------------------------------------------------------->
-</section>
+        </section>
 
     </section>
 

@@ -3,6 +3,7 @@ package com.kh.camp.owner.controller;
 
 import com.kh.camp.owner.service.CampingService;
 import com.kh.camp.owner.vo.CampingVo;
+import com.kh.camp.owner.vo.CampsiteImgVo;
 import com.kh.camp.owner.vo.OwnerVo;
 import com.kh.camp.owner.vo.dayoffVo;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("owner")
@@ -125,15 +127,38 @@ public class CampingController {
 
         return result;
         }
+
+
+
+//    //캠핑장 사진 업로드
+    @PostMapping("campImg")
+    public String insertCampImg(CampsiteImgVo vo , HttpSession session) throws Exception {
+
+        OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
+        String ownerNo = loginOwnerVo.getNo();
+        String campNo = service.selectCampNO(ownerNo);
+        vo.setCampsiteNo(campNo);
+
+
+        MultipartFile imgPath = vo.getImgPath();
+        String originName = imgPath.getOriginalFilename();
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+        imgPath.transferTo(targetFile);
+        vo.setFilePath(originName);
+
+        int result = service.insertCampImg(vo);
+
+        if(result != 1){
+            throw new Exception("등록에 실패하였습니다.");
+        }
+        session.setAttribute("msg" , "등록되었습니다");
+        return "redirect:/owner/camp/insert";
+
+
+    }
+
     }
 
 
-    //캠핑장 사진 업로드
-//    @PostMapping("campImg")
-//    public String insertCampImg(String campName , ImgVo vo){
-//        int result = service.insertCampImg(campName , vo);
-//
-//        return "redirect:/owner/main";
-//    }
 
 

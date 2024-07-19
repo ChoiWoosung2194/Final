@@ -2,7 +2,7 @@ package com.kh.camp.owner.dao;
 
 import com.kh.camp.owner.mapper.CampingMapper;
 import com.kh.camp.owner.vo.CampingVo;
-import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.CampsiteImgVo;
 import com.kh.camp.owner.vo.dayoffVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -36,11 +36,15 @@ public class CampingDao {
         return mapper.campByName(campName);
     }
 
-    public int insertCampImg(ImgVo vo) {
+    public int insertCampImg(CampsiteImgVo vo) {
         return mapper.insertCampImg(vo);
     }
 
     public int insertDay(dayoffVo vo) {
         return mapper.insertDay(vo);
+    }
+
+    public String selectCampNo(String ownerNo) {
+        return mapper.selectCampNo(ownerNo);
     }
 }

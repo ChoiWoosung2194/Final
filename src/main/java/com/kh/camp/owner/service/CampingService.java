@@ -3,7 +3,7 @@ package com.kh.camp.owner.service;
 
 import com.kh.camp.owner.dao.CampingDao;
 import com.kh.camp.owner.vo.CampingVo;
-import com.kh.camp.owner.vo.ImgVo;
+import com.kh.camp.owner.vo.CampsiteImgVo;
 import com.kh.camp.owner.vo.dayoffVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -33,32 +33,15 @@ public class CampingService {
         return dao.updateFacility(no, name);
     }
 
-    public int insertCampImg(String campName, ImgVo vo ) {
-
-
-        CampingVo campingVo = dao.campByName(campName);
-        String campNo = campingVo.getNo();
-        vo.setCampsiteNo(campNo);
-
-//        int sum = 0;
-//        for (MultipartFile att : filePathList) {
-//            String originName = att.getOriginalFilename();
-//            String targetPath = "D:\\chemi\\src\\main\\webapp\\resources\\images\\" + originName;
-//            File targetFile = new File(targetPath);
-//            vo.setFilePathList(targetFile);
-
-//            sum += dao.insertCampImg(vo);
-//        }
-//        if(sum == filePathList.size()){
-//            return 1;
-//        }else {
-//            throw new RuntimeException();
-//        }
-        return 1;
-
+    public int insertCampImg(CampsiteImgVo vo ) {
+        return dao.insertCampImg(vo);
     }
 
     public int insertDay(dayoffVo vo) {
         return dao.insertDay(vo);
+    }
+
+    public String selectCampNO(String ownerNo) {
+        return dao.selectCampNo(ownerNo);
     }
 }
