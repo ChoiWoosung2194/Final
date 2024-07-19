@@ -21,6 +21,7 @@ pageEncoding="UTF-8"%>
         alert("메시지: " + msg);
        session.removeAttribute("msg");
     }
+		</script>
 	</head>
 	<body >
 		<section class="body">
