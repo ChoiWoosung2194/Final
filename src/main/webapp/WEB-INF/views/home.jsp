@@ -70,7 +70,7 @@
                 <c:forEach items="${voList}" var="vo">
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <div class="post">
-                             <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/${vo.zoneLayoutImg}" alt=""></div>
+                             <div class="post-thumbnail"><img class="campImg" style="cursor: pointer;" src="/resources/images/campsiteImg/${vo.zoneLayoutImg}" alt=""></div>
                                 <div class="post-header font-alt">
                                     <h2 class="post-title">${vo.area}</h2>
                                     <h2 class="post-title">${vo.name}</h2>
