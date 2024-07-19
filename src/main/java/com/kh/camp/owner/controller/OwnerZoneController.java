@@ -7,6 +7,7 @@ import com.kh.camp.owner.vo.ZoneVo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,29 @@ public class OwnerZoneController {
         return "owner/zoneInsert";
     }
 
+    //캠핑존 등록(처리)
+    @PostMapping
+    public String zoneInsert(HttpSession session , ZoneVo vo) throws Exception {
+        OwnerVo ownerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
+        String ownerNo = ownerVo.getNo();
+        vo.setOwnerNo(ownerNo);
+
+        MultipartFile imgPath = vo.getImgPath();
+        String originName = imgPath.getOriginalFilename();
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+        imgPath.transferTo(targetFile);
+
+        vo.setFilePath(originName);
+
+        int result = service.zoneInsert(vo);
+
+        if(result != 1){
+            throw new Exception("등록에 실패하였습니다.");
+        }
+        session.setAttribute("msg" , "등록되었습니다.");
+        return "redirect:/owner/main";
+    }
+
     //캠핑존 수정(화면)
     @GetMapping("zone/edit")
     public String editZone(HttpServletRequest req , Model model){
@@ -54,27 +78,6 @@ public class OwnerZoneController {
         return "owner/zone/list";
     }
 
-    //캠핑존 사진 업로드
-    @PostMapping("zone/img")
-    public String uploadImg(ZoneImgVo vo , HttpSession session) throws Exception {
-        OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
-        vo.setOwnerNo(loginOwnerVo.getNo());
-        String zoneNo = service.selectZoneNo(vo);
-        vo.setZoneNo(zoneNo);
 
-
-        MultipartFile zoneImg = vo.getImgPath();
-        String originName = zoneImg.getOriginalFilename();
-        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
-
-        zoneImg.transferTo(targetFile);
-        vo.setFilePath(originName);
-
-        int result = service.uploadImg(vo);
-        if(result != 1){
-            throw new Exception("등록에 실패하였습니다.");
-        }
-        return "redirect:/owner/zone/insert";
-    }
 
 }

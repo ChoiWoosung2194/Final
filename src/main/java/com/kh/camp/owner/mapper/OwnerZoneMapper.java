@@ -13,9 +13,9 @@ import java.util.List;
 public interface OwnerZoneMapper {
 
     @Insert("INSERT INTO ZONE\n" +
-            "(NO, OWNER_NO, SEASON_NO, NAME, MAX_PEOPLE ,PRICE)\n" +
+            "(NO, OWNER_NO, SEASON_NO, NAME,FILE_PATH, MAX_PEOPLE ,PRICE)\n" +
             "VALUES\n" +
-            "(SEQ_ZONE_NO.NEXTVAL, #{ownerNo}, '1', #{name}, #{maxPeople}, #{price} )")
+            "(SEQ_ZONE_NO.NEXTVAL, #{ownerNo}, '1', #{name},#{filePath}, #{maxPeople}, #{price} )")
     int zoneInsert(ZoneVo vo);
 
     @Select("SELECT  Z.SEASON_NO, Z.MAX_PEOPLE, Z.PRICE, Z.NAME \n" +

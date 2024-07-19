@@ -26,9 +26,7 @@ public class OwnerService {
         if(vo.getPwd().length() < 3){
             throw new Exception("비밀번호가 너무 짧습니다.");
         }
-        if(vo.getPwd().equals(vo.getPwd2())){
-            throw new Exception("비밀번호가 일치하지 않습니다.");
-        }
+       
         return dao.join(vo);
     }
 

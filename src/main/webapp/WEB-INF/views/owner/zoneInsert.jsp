@@ -43,17 +43,11 @@ pageEncoding="UTF-8"%>
         <h3><strong>캠핑존 등록하기</strong></h3>
 				<div id="zoneInsert">
 					<hr>
+					<form action="/owner/zone/img" method="post" enctype="multipart/form-data">
 					<input type="text" name="seasonNo" value="1" hidden>
 					<input type="text" name="name" placeholder="존 이름">
 					<input type="number" name="maxPeople" placeholder="최대인원"> 명
 					<input type="number" name="price" placeholder="가격"> 원
-					<button onclick="insertZone();">등록하기</button>
-					<hr>
-					<h3><strong>캠핑존 사진 등록하기</strong></h3>
-					<hr>
-					<form action="/owner/zone/img" method="post" enctype="multipart/form-data">
-					<label for="zoneName">존 이름</label>
-							 <input type="text" name="zoneName">
 							<label for="imgPath">사진 업로드</label>
 							 <input type="file" name="imgPath">
 							<input type="submit" value="사진 올리기">
@@ -68,34 +62,4 @@ pageEncoding="UTF-8"%>
 	</body>
 </html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
 
-	function insertZone(){
-		const seasonNoValue = document.querySelector("input[name=seasonNo]").value;
-		const nameValue = document.querySelector("input[name=name]").value;
-		const maxPeopleValue = document.querySelector("input[name=maxPeople]").value;
-		const priceValue = document.querySelector("input[name=price]").value;
-
-		$.ajax({
-			url : "http://127.0.0.1:8080/owner/api/zone",
-			method : "post",
-			data : {
-				seasonNo : seasonNoValue,
-				name : nameValue,
-				maxPeople : maxPeopleValue,
-				price : priceValue
-			},
-			success : function(x){
-				alert(x);
-				location.href="/owner/zone/list"
-			},
-			error : function(error){
-					console.log(error);
-			},
-		});
-
-	}
-
-
-</script>

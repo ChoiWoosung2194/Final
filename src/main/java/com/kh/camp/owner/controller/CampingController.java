@@ -44,10 +44,8 @@ public class CampingController {
 
         MultipartFile imgPath = vo.getImgPath();
         String originName = imgPath.getOriginalFilename();
-        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/campsiteImg/" + originName);
         imgPath.transferTo(targetFile);
-
-
 
         vo.setZoneLayoutImg(originName);
 
@@ -58,6 +56,7 @@ public class CampingController {
         }
         return "redirect:/owner/main";
     }
+
 
 
     //내 캠핑장 정보(화면)
