@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <img src="/resources/images/campsiteImg/${campDetail.zoneLayoutImg}" alt="캠핑존 레이아웃" class="img-responsive" style="width:100%; height:auto;"/>
+                        <img src="/resources/images/campsiteImg/${campDetail.zoneLayoutImg}" alt="캠핑장 레이아웃" class="img-responsive" style="width:100%; height:auto;"/>
                     </div>
                 </div>
                 <div class="row mt-40">
@@ -179,7 +179,7 @@
                             <c:forEach var="zone" items="${zones}">
                                 <div class="col-sm-4 mb-20">
                                     <div class="zone-box">
-                                        <img src="/resources/images/${zone.filePath}" alt="${zone.name}" class="img-responsive">
+                                        <img src="/resources/images/zoneImg/${zone.filePath}" alt="${zone.name}" class="img-responsive">
                                         <h3 class="zone-name">${zone.name}</h3>
                                         <p>가격: <fmt:formatNumber value="${zone.price}" type="currency"/> / 최대 인원: ${zone.maxPeople}명</p>
                                         <button class="btn btn-round btn-d select-zone" data-zone-id="${zone.no}" data-zone-name="${zone.name}" data-zone-price="${zone.price}" data-zone-maxpeople="${zone.maxPeople}">예약하기</button>
@@ -196,7 +196,15 @@
                             <div class="col-sm-12">
                                 <c:forEach items="${noticeList}" var="notice">
                                     <div class="card">
-                                        <h3>${notice.title}</h3>
+                                    <ul style="list-style: none;">
+                                        <li>
+                                            <label>${notice.title}</label>
+                                        </li>
+                                        <li>
+                                            <span>${notice.content}</span>
+                                        </li>
+                                    </ul>
+                                    
                                     </div>
                                 </c:forEach>
                             </div>
@@ -219,7 +227,7 @@
             var zonePrice = $(this).data('zone-price');
             var zoneMaxPeople = $(this).data('zone-maxpeople');
 
-            var url = "/reservation?zoneId=" + zoneId + "&zoneName=" + zoneName + "&zonePrice=" + zonePrice + "&zoneMaxPeople=" + zoneMaxPeople;
+            var url = "/reservation/save?zoneId=" + zoneId + "&zoneName=" + zoneName + "&zonePrice=" + zonePrice + "&zoneMaxPeople=" + zoneMaxPeople;
             window.location.href = url;
         });
 

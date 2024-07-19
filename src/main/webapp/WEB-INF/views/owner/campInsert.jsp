@@ -56,13 +56,7 @@ pageEncoding="UTF-8"%>
         <input type="submit" value="작성하기">
     </form>
 
-    <hr>
-    <h3><strong>캠핑장 사진 등록하기</strong></h3>
-    <hr>
-    <form action="/owner/campImg" method="post" enctype="multipart/form-data">
-        <input type="file" name="imgPath">
-        <input type="submit" value="사진 올리기">
-    </form>
+
 </div>
          <!---------------------------------------------------------------------------------->
 </section>

@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper
 public interface HomeMapper {
 
-    @Select("SELECT NAME , CAMPSITE_CATEGORY , AREA, ZONE_LAYOUT_IMG FROM CAMPSITE WHERE DEL_YN = 'N'")
+    @Select("SELECT NO, NAME , CAMPSITE_CATEGORY , AREA, ZONE_LAYOUT_IMG FROM CAMPSITE WHERE DEL_YN = 'N'")
     List<HomeVo> selectCamp();
 }

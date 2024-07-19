@@ -47,7 +47,7 @@ public class OwnerZoneController {
 
         MultipartFile imgPath = vo.getImgPath();
         String originName = imgPath.getOriginalFilename();
-        File targetFile = new File("D:/campot/src/main/webapp/resources/images/" + originName);
+        File targetFile = new File("D:/campot/src/main/webapp/resources/images/zoneImg/" + originName);
         imgPath.transferTo(targetFile);
 
         vo.setFilePath(originName);
