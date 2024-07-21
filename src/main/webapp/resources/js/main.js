@@ -20,9 +20,9 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
             const userId = el.data("userid");
             const reportType = el.data("reporttype");
             const receiverName = el.data("receivername");
-    
+
             let url = "/servicecenter/addReport";
-    
+
             if(userId == undefined || userId == null || userId == ""){
                 Swal.fire(
                     '로그인 하셨나요?',
@@ -31,11 +31,11 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
                 )
                 return;
             }
-    
+
             if(reportType != undefined && reportType != null && reportType != "" && receiverName != undefined && receiverName != null && receiverName != ""){
                 url += "?reportType="+reportType+"&receiverName="+receiverName;
             }
-    
+
             $.magnificPopup.open({
                 items: {
                     src: url,
@@ -886,10 +886,10 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
     });
 
-    
-    
 
-    
+
+
+
 })(jQuery);
 
 

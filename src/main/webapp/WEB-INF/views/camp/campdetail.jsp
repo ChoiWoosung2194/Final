@@ -82,7 +82,7 @@
                                 <div class="description">
                                     <p style="margin-bottom: 0px;">주요시설&nbsp;:&nbsp;
                                         <c:if test="${campDetail.market}">
-                                            <img src="${pageContext.request.contextPath}/resources/images/facility/market.png" alt="시장"> 시장,
+                                            <img src="${pageContext.request.contextPath}/resources/images/facility/market.png" alt="시장"> 매점,
                                         </c:if>
                                         <c:if test="${campDetail.shower}">
                                             <img src="${pageContext.request.contextPath}/resources/images/facility/shower.png" alt="샤워시설"> 샤워시설,
@@ -176,13 +176,14 @@
                     <div class="col-sm-12">
                         <h2 class="section-title font-alt">캠핑존 목록</h2>
                         <div class="row">
+
                             <c:forEach var="zone" items="${zones}">
                                 <div class="col-sm-4 mb-20">
                                     <div class="zone-box">
                                         <img src="/resources/images/zoneImg/${zone.filePath}" alt="${zone.name}" class="img-responsive">
                                         <h3 class="zone-name">${zone.name}</h3>
                                         <p>가격: <fmt:formatNumber value="${zone.price}" type="currency"/> / 최대 인원: ${zone.maxPeople}명</p>
-                                        <button class="btn btn-round btn-d select-zone" data-zone-id="${zone.no}" data-zone-name="${zone.name}" data-zone-price="${zone.price}" data-zone-maxpeople="${zone.maxPeople}">예약하기</button>
+                                        <a href="/reservation?zoneNo=${zone.no}">예약하기</a>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -218,26 +219,6 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </main>
-
-<script>
-    $(document).ready(function () {
-        $('.select-zone').click(function () {
-            var zoneId = $(this).data('zone-id');
-            var zoneName = $(this).data('zone-name');
-            var zonePrice = $(this).data('zone-price');
-            var zoneMaxPeople = $(this).data('zone-maxpeople');
-
-            var url = "/reservation/save?zoneId=" + zoneId + "&zoneName=" + zoneName + "&zonePrice=" + zonePrice + "&zoneMaxPeople=" + zoneMaxPeople;
-            window.location.href = url;
-        });
-
-        $('#select-zone-btn').click(function () {
-            $('html, body').animate({
-                scrollTop: $(".zone-name").offset().top
-            }, 500);
-        });
-    });
-</script>
 
 </body>
 </html>

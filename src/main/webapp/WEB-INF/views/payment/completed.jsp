@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
     <title>결제 완료</title>
+ <jsp:include page="/resources/commonLib.jsp"></jsp:include>
+                <link rel="stylesheet" href="/resources/css/home.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,40 +68,24 @@
     </style>
 </head>
 <body>
+
  <div class="container">
         <div class="content">
             <h1>결제가 완료되었습니다!</h1>
             <p>고객님의 결제가 성공적으로 처리되었습니다.</p>
             <div class="order-info">
                 <h2>주문 정보</h2>
-                <p>주문 번호: <span id="order-number">${ApproveResponse.tid}</span></p>
+                <p>주문 번호: <span id="order-number">${tid}</span></p>
                 <h3>상품 정보</h3>
                 <ul id="product-list">
                     <!-- JavaScript를 통해 동적으로 상품 정보가 추가될 것입니다. -->
                 </ul>
-                <p>총 결제 금액: <span id="total-amount">₩0</span></p>
+                <p>총 결제 금액: <span id="total-amount">${vo.totalPrice} 원</span></p>
             </div>
-            <a href="index.html" class="button">홈으로 돌아가기</a>
+            <a href="/home" class="button">홈으로 돌아가기</a>
         </div>
     </div>
 
 </body>
 </html>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const orderNumber = '${ApproveResponse.partner_order_id}'; // 서버에서 받아온 실제 주문 번호로 대체해야 합니다.
-    const product = { name: '${res}', quantity: 2, price: 15000 };
 
-    document.getElementById('order-number').textContent = orderNumber;
-
-    const productDetails = document.getElementById('product-details');
-    const detailDiv = document.createElement('div');
-    detailDiv.className = 'product-detail';
-    detailDiv.innerHTML = `
-        <p>상품명: ${product.name}</p>
-        <p>인원수: ${product.quantity}</p>
-        <p>가격: ₩${(product.price * product.quantity).toLocaleString()}</p>
-    `;
-    productDetails.appendChild(detailDiv);
-});
-</script>

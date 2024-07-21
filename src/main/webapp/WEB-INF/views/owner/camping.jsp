@@ -36,7 +36,7 @@ pageEncoding="UTF-8"%>
 
 			<hr>
 			<div id="campsite">
-				<img src="/resources/images/${voList.zoneLayoutImg}" style="height: 300px; width: 300px;">
+				<img src="/resources/images/campsiteImg/${voList.zoneLayoutImg}" style="height: 300px; width: 300px;">
 				
 				<div class="form-group">
 						<label for="area">지역</label>

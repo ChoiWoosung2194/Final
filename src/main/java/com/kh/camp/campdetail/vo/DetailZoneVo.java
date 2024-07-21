@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class DetailZoneVo {
-    private int no;
-    private int ownerNo;
-    private int seasonNo;
+    private String no;
+    private String ownerNo;
+    private String seasonNo;
     private String name;
-    private int maxPeople;
-    private double price;
+    private String maxPeople;
+    private String price;
     private String filePath;
 }

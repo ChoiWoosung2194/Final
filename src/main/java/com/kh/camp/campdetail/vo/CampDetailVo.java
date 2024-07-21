@@ -5,19 +5,17 @@ import java.sql.Date;
 
 @Data
 public class CampDetailVo {
-    private int no;
-    private int ownerNo;
+    private String no;
+    private String ownerNo;
     private String name;
     private String address;
     private String tel;
     private String introduction;
     private String basicInfo;
     private String zoneLayoutImg;
-    private Double longitude;
-    private Double latitude;
     private String delYn;
     private String area;
-    private Date holiDay;
+    private String holiDay;
     private String blindCamp;
     private String campsiteCategory;
     private String sink;

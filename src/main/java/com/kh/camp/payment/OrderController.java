@@ -1,10 +1,13 @@
 package com.kh.camp.payment;
 
 import com.kh.camp.member.vo.MemberVo;
+import com.kh.camp.reservation.vo.ReservZoneVo;
+import com.kh.camp.reservation.vo.ReservationVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -15,8 +18,16 @@ public class OrderController {
 
     private final KakaoPayService kakaoPayService;
 
-    @GetMapping
-    public String order(){
+    @GetMapping("set")
+    public String order(String zoneNo,String night, HttpSession session,Model model){
+        MemberVo loginVo = (MemberVo) session.getAttribute("loginVo");
+        String no = loginVo.getNo();
+        ReservationVo vo = kakaoPayService.selectReserv(zoneNo, no);
+        ReservZoneVo zoneVo = kakaoPayService.selectZoneDetail(zoneNo);
+        session.setAttribute("zoneNo",zoneNo);
+        model.addAttribute("zoneVo", zoneVo);
+        model.addAttribute("vo",vo);
+        model.addAttribute("night",night);
         return "payment/payment";
     }
 
@@ -44,9 +55,14 @@ public class OrderController {
     }
 
     @GetMapping("/pay/completed")
-    public String payCompleted(@RequestParam("pg_token") String pgToken, HttpSession SessionUtils) {
-
+    public String payCompleted(@RequestParam("pg_token") String pgToken, HttpSession SessionUtils,Model model) {
+        String zoneNo = (String) SessionUtils.getAttribute("zoneNo");
+        MemberVo loginVo = (MemberVo) SessionUtils.getAttribute("loginVo");
+        String no = loginVo.getNo();
+        ReservationVo vo = kakaoPayService.selectReserv(zoneNo,no);
+        model.addAttribute("vo",vo);
         String tid = (String) SessionUtils.getAttribute("tid");
+        model.addAttribute("tid", tid);
         String id = (String) SessionUtils.getAttribute("partner_user_id");
         log.info("결제승인 요청을 인증하는 토큰: " + pgToken);
         log.info("결제 고유번호: " + tid);
