@@ -6,11 +6,13 @@ import java.util.Date;
 
 @Data
 public class ReservationVo {
-    private int no;
-    private int zoneNo;
-    private int memNo;
-    private Date bookDate;
-    private Date startDate;
-    private Date endDate;
-    private int count;
+    private String no;
+    private String zoneNo;
+    private String memNo;
+    private String startDate;
+    private String endDate;
+    private String count;
+    private String totalPrice;
+
+
 }

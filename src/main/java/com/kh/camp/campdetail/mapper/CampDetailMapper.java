@@ -10,12 +10,12 @@ import java.util.List;
 
 @Mapper
 public interface CampDetailMapper {
-    @Select("SELECT * FROM CAMPSITE WHERE OWNER_NO = #{campId}")
-    CampDetailVo getCampDetailById(int campId);
+    @Select("SELECT * FROM CAMPSITE WHERE OWNER_NO = #{campNo}")
+    CampDetailVo getCampDetailById(String campNo);
 
-    @Select("SELECT * FROM ZONE WHERE OWNER_NO = #{campId}")
-    List<DetailZoneVo> getZonesByCampId(int campId);
+    @Select("SELECT * FROM ZONE WHERE OWNER_NO = #{campNo}")
+    List<DetailZoneVo> getZonesByCampId(String campNo);
 
-    @Select("SELECT * FROM CAMPSITE_NOTICE WHERE OWNER_NO = #{campId}")
-    List<CampNoticeVo> getCampNotice(int campId);
+    @Select("SELECT * FROM CAMPSITE_NOTICE WHERE OWNER_NO = #{campNo}")
+    List<CampNoticeVo> getCampNotice(String campNo);
 }

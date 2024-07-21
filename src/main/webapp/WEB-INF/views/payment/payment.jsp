@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Kakao Pay</title>
-    <style>
+  <jsp:include page="/resources/commonLib.jsp"></jsp:include>
+                <link rel="stylesheet" href="/resources/css/home.css">
+ <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -63,25 +65,31 @@
     </style>
 </head>
 <body>
-<h1>결제</h1>
+<jsp:include page="/WEB-INF/views/common/header.jsp" />
+<hr>
+<br>
+<br>
+
+
      <div class="container">
-            <h1>결제 전 물품 확인</h1>
+
             <div class="cart-items">
                 <div class="cart-item">
-                    <span class="item-name">상품 A</span>
-                    <span class="item-quantity">1개</span>
-                    <span class="item-price">10,000원</span>
+                    <img style="width: 300px; height: 300px;" src="/resources/images/zoneImg/${zoneVo.filePath}" alt="">
+                    <span class="item-name">${zoneVo.name}</span>
+                    <span class="item-quantity">${night} 박 </span>
+                    <span class="item-price">${vo.totalPrice}원</span>
                 </div>
             </div>
             <div class="total">
                 <span>총 결제 금액:</span>
-                <span id="total-price">50,000원</span>
+                <span id="total-price">${vo.totalPrice}원</span>
             </div>
             <button id="btn-pay-ready">결제하기</button>
         </div>
 
 
-
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -92,10 +100,10 @@
         $("#btn-pay-ready").click(function(e) {
             // 아래 데이터 외에도 필요한 데이터를 원하는 대로 담고, Controller에서 @RequestBody로 받으면 됨
             let data = {
-                name: '상품명',   // 카카오페이에 보낼 대표 상품명
+                name: '${vo.zoneNo}',   // 카카오페이에 보낼 대표 상품명
                 partner_user_id: '${loginVo.id}',
                 quantity: 1,
-                totalPrice: 20000 // 총 결제금액
+                totalPrice: '${vo.totalPrice}' // 총 결제금액
             };
 
             $.ajax({

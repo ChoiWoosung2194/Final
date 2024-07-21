@@ -1,30 +1,26 @@
 package com.kh.camp.reservation.dao;
 
 
+import com.kh.camp.owner.vo.ZoneVo;
 import com.kh.camp.reservation.mapper.ReservationMapper;
+import com.kh.camp.reservation.vo.ReservZoneVo;
 import com.kh.camp.reservation.vo.ReservationVo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class ReservationDao {
 
-    private final ReservationMapper reservationMapper;
+    private final ReservationMapper mapper;
 
-    public ReservationDao(ReservationMapper reservationMapper) {
-        this.reservationMapper = reservationMapper;
+    public ReservZoneVo setZone(String zoneNo) {
+        return mapper.setZone(zoneNo);
     }
 
-    public List<ReservationVo> getAllReservations() {
-        return reservationMapper.getAllReservations();
-    }
-
-    public ReservationVo getReservationById(int no) {
-        return reservationMapper.getReservationById(no);
-    }
-
-    public void saveReservation(ReservationVo reservation) {
-        reservationMapper.saveReservation(reservation);
+    public int setReservation(ReservationVo vo) {
+        return mapper.setReservation(vo);
     }
 }

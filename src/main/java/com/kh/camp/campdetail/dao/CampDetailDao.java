@@ -15,15 +15,15 @@ public class CampDetailDao {
 
     private final CampDetailMapper campDetailMapper;
 
-    public CampDetailVo getCampDetailById(int campId) {
-        return campDetailMapper.getCampDetailById(campId);
+    public CampDetailVo getCampDetailById(String campNo) {
+        return campDetailMapper.getCampDetailById(campNo);
     }
 
-    public List<DetailZoneVo> getZonesByCampId(int campId) {
-        return campDetailMapper.getZonesByCampId(campId);
+    public List<DetailZoneVo> getZonesByCampId(String campNo) {
+        return campDetailMapper.getZonesByCampId(campNo);
     }
 
-    public List<CampNoticeVo> getCampNotice(int campId) {
-        return campDetailMapper.getCampNotice(campId);
+    public List<CampNoticeVo> getCampNotice(String campNo) {
+        return campDetailMapper.getCampNotice(campNo);
     }
 }

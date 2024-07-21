@@ -15,15 +15,15 @@ public class CampDetailService {
 
     private final CampDetailDao campDetailDao;
 
-    public CampDetailVo getCampDetailById(int campId) {
-        return campDetailDao.getCampDetailById(campId);
+    public CampDetailVo getCampDetailById(String campNo) {
+        return campDetailDao.getCampDetailById(campNo);
     }
 
-    public List<DetailZoneVo> getZonesByCampId(int campId) {
-        return campDetailDao.getZonesByCampId(campId);
+    public List<DetailZoneVo> getZonesByCampId(String campNo) {
+        return campDetailDao.getZonesByCampId(campNo);
     }
 
-    public List<CampNoticeVo> getCampNotice(int campId) {
-        return campDetailDao.getCampNotice(campId);
+    public List<CampNoticeVo> getCampNotice(String campNo) {
+        return campDetailDao.getCampNotice(campNo);
     }
 }

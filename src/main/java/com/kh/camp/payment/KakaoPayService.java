@@ -1,6 +1,9 @@
 package com.kh.camp.payment;
 
 import com.kh.camp.member.vo.MemberVo;
+import com.kh.camp.reservation.vo.ReservZoneVo;
+import com.kh.camp.reservation.vo.ReservationVo;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +16,10 @@ import java.util.Map;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class KakaoPayService {
+
+    private final OrderDao dao;
 
     // 카카오페이 결제창 연결
     public ReadyResponse payReady(String name,  String partner_user_id, int quantity, int totalPrice ) {
@@ -77,5 +83,13 @@ public class KakaoPayService {
         headers.set("Content-type", "application/json;charset=utf-8");
 
         return headers;
+    }
+
+    public ReservationVo selectReserv(String zoneNo, String no) {
+        return dao.selectReserv(zoneNo, no);
+    }
+
+    public ReservZoneVo selectZoneDetail(String zoneNo) {
+        return dao.selectZoneDetail(zoneNo);
     }
 }
