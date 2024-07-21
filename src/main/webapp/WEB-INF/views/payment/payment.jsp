@@ -13,9 +13,8 @@
             margin: 0;
             padding: 0;
         }
-
-        .container {
-            width: 50%;
+        .order {
+            width: 90%;
             margin: 100px auto;
             background: #fff;
             padding: 20px;
@@ -62,6 +61,16 @@
         button:hover {
             background: #0056b3;
         }
+        td, th {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        table, th, td {
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -71,14 +80,33 @@
 <br>
 
 
-     <div class="container">
+
+        <div class="main showcase-page">
+            <section class="module-medium" id="demos">
+                <div class="container">
+                    <div class="row">
+                        <div style="padding-left: 30px;">
+                            <h2 class="module-title font-alt font-jua main-color" style="text-align: left;font-size: 34px; margin: 0;">결제 전 확인</h2>
+                        </div>
+                    </div>
+
+     <div class="order">
 
             <div class="cart-items">
                 <div class="cart-item">
                     <img style="width: 300px; height: 300px;" src="/resources/images/zoneImg/${zoneVo.filePath}" alt="">
-                    <span class="item-name">${zoneVo.name}</span>
-                    <span class="item-quantity">${night} 박 </span>
-                    <span class="item-price">${vo.totalPrice}원</span>
+                    <table style="margin-right: 400px;">
+                        <tr>
+                            <th>캠핑존 이름</th>
+                            <th>숙박일수</th>
+                            <th>총 가격</th>
+                        </tr>
+                        <tr>
+                            <td>${zoneVo.name}</td>
+                            <td>${night} 박</td>
+                            <td>${vo.totalPrice}원</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="total">
@@ -86,7 +114,7 @@
                 <span id="total-price">${vo.totalPrice}원</span>
             </div>
             <button id="btn-pay-ready">결제하기</button>
-        </div>
+     </div>
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
