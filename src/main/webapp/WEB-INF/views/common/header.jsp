@@ -59,7 +59,7 @@
                            <c:if test="${loginVo == null}">
                               <a class="modal-basic" href="/member/login" id="header-login"><button
                                     class="btn btn-border-w btn-round btn-xs main-login-btn"
-                                    type="button">LOGIN</button></a>
+                                    type="button">LOGIN</butt\on></a>
                            </c:if>
                      </li>
                      <!-- 로그인/로그아웃 End -->
